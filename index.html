@@ -15,8 +15,8 @@
       --border: #e5e7eb;
       --accent: #2a4267;
       --caption: #6b7280;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-      --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
+      --shadow: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.05);
+      --shadow-hover: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.08);
       --radius: 12px;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,8 +25,6 @@
       background: var(--background);
       color: var(--text);
       min-height: 100vh;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
     .container {
       max-width: 950px;
@@ -93,24 +91,26 @@
       border-color: var(--secondary);
     }
     .image-wrapper {
-      width: 250px;
-      min-width: 180px;
-      background: #f3f4f6;
-      padding: 1rem;
+      width: 340px;
+      min-width: 210px;
+      max-width: 390px;
+      height: 340px;
+      background: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
       border-right: 1px solid var(--border);
+      padding: 0;
+      overflow: hidden;
     }
     .award-image {
-      max-width: 100%;
-      max-height: 220px;
-      display: block;
-      object-fit: contain;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       background: #fff;
-      padding: 5px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.07);
       border-radius: 4px;
+      display: block;
       transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
     }
     .award-card:hover .award-image {
@@ -208,8 +208,8 @@
     }
     @media (max-width: 900px) {
       .award-card { flex-direction: column; }
-      .image-wrapper { width: 100%; border-right: none; border-bottom: 1px solid var(--border); }
-      .award-content { padding: 22px 16px 18px 16px; }
+      .image-wrapper { width: 100%; min-width: unset; max-width: unset; border-right: none; border-bottom: 1px solid var(--border); height: 240px;}
+      .award-content { padding: 18px 14px 12px 14px; }
       .container { padding: 0 0 18px 0; }
     }
     @media (max-width: 650px) {
@@ -222,7 +222,7 @@
         border-right: 0;
       }
       .awards-list { gap: 18px; }
-      .image-wrapper { min-width: unset; padding: 8px 0; }
+      .image-wrapper { height: 160px; }
       h1 { font-size: 2em; }
       .celebration-section {
         border-radius: 0;
@@ -246,9 +246,10 @@
 
     <div class="awards-list">
 
+      <!-- Chick Pizz (your image) -->
       <div class="award-card">
         <div class="image-wrapper">
-          <img class="award-image" src="https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Chick%20Pizz%20Denton%20Burn%202105.jpg" alt="Crispy fried chicken from Chick Pizz">
+          <img class="award-image" src="https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Chick%20Pizz%20Denton%20Burn%202105.jpg>
         </div>
         <div class="award-content">
           <div class="award-title">Chick Pizz – Best Fried Chicken</div>
@@ -264,9 +265,10 @@
         </div>
       </div>
 
+      <!-- Get Stuffed -->
       <div class="award-card">
         <div class="image-wrapper">
-          <img class="award-image" src="https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Airbrush-image-extender%20(1).jpeg" alt="A large kebab from Get Stuffed">
+          <img class="award-image" src="https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Airbrush-image-extender%20(1).jpeg" alt="Get Stuffed Kebab">
         </div>
         <div class="award-content">
           <div class="award-title">Get Stuffed – Best Kebab</div>
@@ -282,9 +284,10 @@
         </div>
       </div>
 
+      <!-- Ritz Fish & Chips (your image) -->
       <div class="award-card">
         <div class="image-wrapper">
-          <img class="award-image" src="https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Ritz%20Fish%20-%20Chips%201095.jpg" alt="Classic fish and chips from Ritz">
+          <img class="award-image" src="https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Ritz%20Fish%20-%20Chips%201095.jpg">
         </div>
         <div class="award-content">
           <div class="award-title">Ritz Fish & Chips – Best Fish & Chips</div>
@@ -300,9 +303,10 @@
         </div>
       </div>
 
+      <!-- Sorrento Pizza -->
       <div class="award-card">
         <div class="image-wrapper">
-          <img class="award-image" src="https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Sorrento%20Birtley%201550.jpg" alt="A pepperoni pizza from Sorrento Pizza Ltd">
+          <img class="award-image" src="https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Sorrento%20Birtley%201550.jpg" alt="Sorrento Pizza Ltd">
         </div>
         <div class="award-content">
           <div class="award-title">Sorrento Pizza Ltd – Best Pizza</div>
