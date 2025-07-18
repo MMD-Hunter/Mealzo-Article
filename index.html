@@ -3,252 +3,197 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Newcastle Takeaways Win Big at Mealzo for Business Awards</title>
+  <title>Newcastle Takeaways Recognised at Mealzo for Business Awards</title>
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
   <style>
-    /* --- General Styles --- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --primary: #203864;
+      --secondary: #FFB300;
+      --background: #f4f6fb;
+      --card-bg: #fff;
+      --text: #1a1a1a;
+      --border: #e3e8f0;
+      --accent: #30638e;
+      --award-shadow: 0 6px 24px rgba(32, 56, 100, 0.07);
+      --card-radius: 12px;
     }
-
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background-color: #f8f9fa; /* Professional, light grey background */
-      color: #212529; /* Darker text for better contrast */
-      line-height: 1.6;
+      font-family: 'Inter', Arial, Helvetica, sans-serif;
+      background: var(--background);
+      color: var(--text);
       min-height: 100vh;
     }
-
     .container {
-      max-width: 1100px;
+      max-width: 950px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 36px 16px;
     }
-
-    /* --- Header --- */
     .header {
-      background-color: #ffffff;
-      border-radius: 16px;
-      padding: 40px;
-      margin-bottom: 40px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05); /* Softer shadow */
+      background: var(--card-bg);
+      border-radius: var(--card-radius);
+      padding: 38px 32px 30px 32px;
+      box-shadow: 0 6px 24px rgba(32, 56, 100, 0.08);
+      border: 1px solid var(--border);
       text-align: center;
-      border: 1px solid #dee2e6;
+      margin-bottom: 38px;
     }
-
     .logo img {
-      max-width: 220px;
-      height: auto;
-      margin-bottom: 25px;
+      max-width: 180px;
+      margin-bottom: 18px;
+      filter: grayscale(10%) drop-shadow(0 4px 12px rgba(32, 56, 100, 0.07));
     }
-
     h1 {
-      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-size: 2.6em;
       font-weight: 700;
-      color: #1a1a1a; /* Solid colour for professional look */
-      margin-bottom: 15px;
-      line-height: 1.2;
+      color: var(--primary);
+      letter-spacing: -1px;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 8px rgba(32, 56, 100, 0.05);
     }
-
     .subtitle {
-      font-size: 1.1rem;
-      color: #495057;
-      max-width: 650px;
-      margin: 0 auto;
+      font-size: 1.13em;
+      color: #4e596b;
+      margin-bottom: 3px;
     }
-
-    /* --- Awards Grid --- */
     .awards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Adjusted for better spacing */
+      grid-template-columns: 1fr 1fr;
       gap: 30px;
-      margin-bottom: 40px;
+      margin-bottom: 48px;
     }
-
+    @media (max-width: 900px) {
+      .awards-grid { grid-template-columns: 1fr; }
+    }
     .award-card {
-      background-color: #ffffff;
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-      border: 1px solid #dee2e6;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: var(--card-bg);
+      border-radius: var(--card-radius);
+      box-shadow: var(--award-shadow);
+      border: 1px solid var(--border);
+      transition: box-shadow 0.22s, border-color 0.22s;
       display: flex;
       flex-direction: column;
+      min-height: 100%;
+      position: relative;
     }
-
     .award-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 12px 36px rgba(32,56,100,0.13);
+      border-color: var(--secondary);
     }
-
     .award-header {
       display: flex;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 20px;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 28px 28px 0 28px;
+      min-height: 80px;
     }
-
-    .award-icon {
-      width: 50px;
-      height: 50px;
-      background-color: #FF6B35; /* Using the brand's accent colour */
-      border-radius: 12px;
+    .award-title h2 {
+      font-size: 1.43em;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 3px;
+      letter-spacing: -.2px;
+    }
+    .location {
+      font-size: 1em;
+      color: #7a8593;
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+    .image-container {
+      margin: 22px 0 0 0;
+      border-radius: 0;
+      overflow: hidden;
+      width: 100%;
+      min-height: 200px;
+      background: #eaeef7;
+      box-shadow: 0 4px 24px rgba(32, 56, 100, 0.09);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: white;
-      flex-shrink: 0;
-      text-transform: uppercase;
     }
-
-    .award-title {
-      flex: 1;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #212529;
-      margin-bottom: 4px;
-    }
-
-    .location {
-      font-size: 0.9rem;
-      color: #6c757d;
-      font-weight: 500;
-    }
-
-    /* --- Image Styles --- */
-    .image-container {
-      position: relative;
-      margin-bottom: 25px;
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
     .award-image {
       width: 100%;
-      height: 280px; /* Uniform height */
+      height: 230px;
       object-fit: cover;
-      display: block;
-      transition: transform 0.4s ease;
+      transition: filter 0.25s;
+      border-bottom: 1.5px solid var(--border);
+      filter: contrast(1.15) saturate(1.13);
     }
-    
     .award-card:hover .award-image {
-        transform: scale(1.05);
+      filter: contrast(1.25) saturate(1.22) brightness(1.05);
     }
-
-    .image-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-      color: white;
-      padding: 20px;
-      opacity: 0; /* Hidden by default */
-      transition: opacity 0.4s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 1.1rem;
-      font-weight: 500;
-    }
-
-    .image-container:hover .image-overlay {
-      opacity: 1; /* Fade in on hover */
-    }
-
-    /* --- Content Styles --- */
     .content {
-      flex-grow: 1;
+      padding: 22px 28px 28px 28px;
+      flex: 1 1 auto;
       display: flex;
       flex-direction: column;
     }
-
     .content p {
-      margin-bottom: 15px;
-      font-size: 1rem;
-      color: #495057;
+      margin-bottom: 13px;
+      font-size: 1.06em;
+      color: #3a4354;
     }
-
     .highlight {
       font-weight: 600;
-      color: #000;
+      color: var(--secondary);
+      letter-spacing: .05em;
     }
-
     .quote {
-      background-color: #f8f9fa;
-      border-left: 4px solid #FF6B35;
-      padding: 20px;
-      margin: 15px 0;
-      border-radius: 0 8px 8px 0;
+      background: #f1f6fd;
+      border-left: 3.7px solid var(--secondary);
+      padding: 17px 24px;
+      margin: 18px 0 14px 0;
+      border-radius: 7px;
       font-style: italic;
-      color: #343a40;
+      color: #30597b;
+      font-size: 1.04em;
     }
-    
     .top-seller {
-      background-color: #ffe8de; /* Lighter shade of the accent colour */
-      color: #d9531e;
-      padding: 8px 15px;
-      border-radius: 20px;
+      background: #e3e8f0;
+      color: var(--primary);
+      padding: 10px 17px;
+      border-radius: 9px;
       font-weight: 600;
-      font-size: 0.9rem;
       display: inline-block;
-      margin-top: auto; /* Pushes to the bottom */
-      align-self: flex-start;
+      margin-top: 10px;
+      font-size: 1em;
     }
-
-    /* --- Celebration Section --- */
     .celebration-section {
-      background-color: #ffffff;
-      border-radius: 16px;
-      padding: 40px;
+      background: var(--card-bg);
+      border-radius: var(--card-radius);
+      padding: 38px 28px;
       text-align: center;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-      border: 1px solid #dee2e6;
+      box-shadow: 0 6px 24px rgba(32, 56, 100, 0.08);
+      border: 1px solid var(--border);
     }
-
     .celebration-section h2 {
-      font-size: 2rem;
-      color: #FF6B35;
-      margin-bottom: 15px;
+      font-size: 2em;
+      margin-bottom: 18px;
+      color: var(--primary);
+      letter-spacing: -.6px;
     }
-
     .celebration-section p {
-      font-size: 1.1rem;
-      color: #495057;
-      max-width: 800px;
-      margin: 0 auto 20px;
+      font-size: 1.13em;
+      color: #425064;
+      margin-bottom: 0;
     }
-
     .footer {
       text-align: center;
-      font-weight: 600;
-      font-size: 1.1rem;
-      color: #343a40;
-      margin-top: 30px;
+      font-weight: 700;
+      font-size: 1.13em;
+      color: var(--secondary);
+      margin-top: 27px;
     }
-
-    /* --- Responsive Design --- */
-    @media (max-width: 992px) {
-        .awards-grid {
-            grid-template-columns: 1fr; /* Single column on smaller screens */
-        }
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        padding: 20px 15px;
+    @media (max-width: 650px) {
+      .header, .celebration-section, .award-card {
+        padding: 20px 10px;
       }
-      .header, .award-card, .celebration-section {
-        padding: 25px 20px;
-      }
+      .awards-grid { gap: 18px; }
+      .award-header, .content { padding: 10px; }
+      .award-image { height: 140px; }
     }
   </style>
 </head>
@@ -256,118 +201,98 @@
   <div class="container">
     <div class="header">
       <div class="logo">
-        <img src="[https://uploads.onecompiler.io/43jasxyr7/43r2gqsqx/Mealzoforbusiness%20logo%20W.png](https://uploads.onecompiler.io/43jasxyr7/43r2gqsqx/Mealzoforbusiness%20logo%20W.png)" alt="Mealzo Logo">
+        <img src="https://uploads.onecompiler.io/43jasxyr7/43r2gqsqx/Mealzoforbusiness%20logo%20W.png" alt="Mealzo for Business Logo">
       </div>
-      <h1>Four Newcastle Takeaways Crowned Winners</h1>
+      <h1>Four Newcastle Takeaways Recognised</h1>
       <p class="subtitle">The annual Mealzo for Business Awards celebrate the best of local food businesses, with winners selected based on consistent customer feedback, popular demand, and standout service.</p>
     </div>
-
     <div class="awards-grid">
-      <!-- Award Card: Best Fried Chicken -->
+
       <div class="award-card">
         <div class="award-header">
-          <div class="award-icon">Chicken</div>
           <div class="award-title">
             <h2>Chick Pizz – Best Fried Chicken</h2>
-            <p class="location">Denton Burn</p>
+            <div class="location">Denton Burn</div>
           </div>
         </div>
         <div class="image-container">
-          <img class="award-image" src="[https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Chick%20Pizz%20Denton%20Burn%202105.jpg](https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Chick%20Pizz%20Denton%20Burn%202105.jpg)" alt="Chick Pizz fried chicken">
-          <div class="image-overlay">
-            <p>Golden, crispy chicken that's become a local favourite.</p>
-          </div>
+          <img class="award-image" src="https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Chick%20Pizz%20Denton%20Burn%202105.jpg" alt="Chick Pizz">
         </div>
         <div class="content">
-          <p>Locals in Denton Burn already know Chick Pizz serves some of the best fried chicken in town—and now it's official.</p>
-          <p><span class="highlight">Stephen Phillip Burgon</span>, owner of Chick Pizz, was thrilled to receive the Best Fried Chicken award.</p>
+          <p>Locals in Denton Burn have long favoured Chick Pizz for its exceptional fried chicken—and now the recognition is official.</p>
+          <p><span class="highlight">Stephen Phillip Burgon</span>, proprietor of Chick Pizz, expressed his gratitude for the Best Fried Chicken accolade.</p>
           <div class="quote">
-            This win is all down to our amazing customers and our team who put the effort in every day. We're proud to be part of the Mealzo community.
+            This recognition is entirely down to our dedicated customers and hardworking team. We’re proud to be part of the Mealzo community.
           </div>
-          <div class="top-seller">Top Seller: Fried chicken box – crisp, juicy, and full of flavour</div>
+          <div class="top-seller">Top seller: Fried chicken box – crisp, juicy, and full of flavour</div>
         </div>
       </div>
 
-      <!-- Award Card: Best Kebab -->
       <div class="award-card">
         <div class="award-header">
-          <div class="award-icon">Kebab</div>
           <div class="award-title">
             <h2>Get Stuffed – Best Kebab</h2>
-            <p class="location">Newcastle upon Tyne</p>
+            <div class="location">Newcastle upon Tyne</div>
           </div>
         </div>
         <div class="image-container">
-          <img class="award-image" src="[https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Airbrush-image-extender%20(1).jpeg](https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Airbrush-image-extender%20(1).jpeg)" alt="Get Stuffed kebab">
-          <div class="image-overlay">
-            <p>Generous portions and bold flavours in the city centre.</p>
-          </div>
+          <img class="award-image" src="https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Airbrush-image-extender%20(1).jpeg" alt="Get Stuffed">
         </div>
         <div class="content">
-          <p><span class="highlight">Get Stuffed</span> has officially taken the title of Best Kebab in Newcastle—and customers will tell you it's well-deserved.</p>
-          <p>Run by <span class="highlight">Kerim Seven</span>, the busy city-centre takeaway has become known for generous portions and bold flavours.</p>
+          <p><span class="highlight">Get Stuffed</span> has officially been recognised as the home of the finest kebab in Newcastle—a distinction well deserved according to its loyal clientele.</p>
+          <p>Managed by <span class="highlight">Kerim Seven</span>, this city-centre establishment is renowned for generous portions and bold, distinctive flavours.</p>
           <div class="quote">
-            We don't cut corners – it's quality ingredients, proper prep, and good service. Winning this means a lot because it's based on what customers think.
+            We never cut corners—only the finest ingredients, careful preparation, and quality service. This award means a lot as it’s driven by what our customers truly favour.
           </div>
-          <div class="top-seller">Top Seller: Mixed doner kebab – stacked high and full of flavour</div>
+          <div class="top-seller">Top seller: Mixed doner kebab – stacked high and brimming with flavour</div>
         </div>
       </div>
 
-      <!-- Award Card: Best Fish & Chips -->
       <div class="award-card">
         <div class="award-header">
-          <div class="award-icon">Fish</div>
           <div class="award-title">
             <h2>Ritz Fish & Chips – Best Fish & Chips</h2>
-            <p class="location">Columbia, Washington</p>
+            <div class="location">Columbia, Washington</div>
           </div>
         </div>
         <div class="image-container">
-          <img class="award-image" src="[https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Ritz%20Fish%20-%20Chips%201095.jpg](https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Ritz%20Fish%20-%20Chips%201095.jpg)" alt="Ritz Fish & Chips meal">
-          <div class="image-overlay">
-            <p>Classic fish and chips done right with fresh ingredients.</p>
-          </div>
+          <img class="award-image" src="https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Ritz%20Fish%20-%20Chips%201095.jpg" alt="Ritz Fish & Chips">
         </div>
         <div class="content">
-          <p><span class="highlight">Ritz Fish & Chips</span>, based in Columbia, has been recognised for doing the classics right—winning Best Fish & Chips.</p>
-          <p>Led by <span class="highlight">Manveer Singh</span>, Ritz has earned a reputation for flaky cod, crisp batter, and perfectly cooked chips.</p>
+          <p><span class="highlight">Ritz Fish & Chips</span>, based in Columbia, has been recognised for excellence in traditional fare—earning the Best Fish & Chips title.</p>
+          <p>Under the stewardship of <span class="highlight">Manveer Singh</span>, Ritz is celebrated for its flaky cod, crisp batter, and properly cooked chips.</p>
           <div class="quote">
-            We're all about keeping it simple and doing it well. This award gives us a real boost and we're grateful to our customers for their support.
+            Our ethos is to keep it simple and do it well. This recognition truly motivates us and we’re grateful for the continued support of our customers.
           </div>
-          <div class="top-seller">Top Seller: Traditional fish supper – cod, chips, and mushy peas</div>
+          <div class="top-seller">Top seller: Traditional fish supper – cod, chips, and mushy peas</div>
         </div>
       </div>
 
-      <!-- Award Card: Best Pizza -->
       <div class="award-card">
         <div class="award-header">
-          <div class="award-icon">Pizza</div>
           <div class="award-title">
             <h2>Sorrento Pizza Ltd – Best Pizza</h2>
-            <p class="location">Birtley</p>
+            <div class="location">Birtley</div>
           </div>
         </div>
         <div class="image-container">
-          <img class="award-image" src="[https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Sorrento%20Birtley%201550.jpg">
-          <div class="image-overlay">
-            <p>Handcrafted pizzas with fresh ingredients and fast service.</p>
-          </div>
+          <img class="award-image" src="https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Sorrento%20Birtley%201550.jpg" alt="Sorrento Pizza Ltd">
         </div>
         <div class="content">
-          <p><span class="highlight">Sorrento Pizza Ltd</span>, based in Birtley, has been crowned Best Pizza, topping the charts with their handcrafted pies.</p>
-          <p>Owned by <span class="highlight">Ali Rowhani</span>, the team at Sorrento pride themselves on fresh ingredients and fast service.</p>
+          <p><span class="highlight">Sorrento Pizza Ltd</span>, located in Birtley, has topped the rankings as Best Pizza, praised for handcrafted quality.</p>
+          <p>Owner <span class="highlight">Ali Rowhani</span> and his team focus on using fresh ingredients and prompt service to delight customers.</p>
           <div class="quote">
-            It means a lot to be recognised like this. We've worked hard to build something people love, and Mealzo has helped us reach more of them.
+            It means a great deal to be recognised in this way. We’ve worked hard to create something people in our community truly favour, and Mealzo has helped us reach even more of them.
           </div>
-          <div class="top-seller">Top Seller: Classic pepperoni – rich tomato, bubbling mozzarella, and just the right kick</div>
+          <div class="top-seller">Top seller: Classic pepperoni – rich tomato, bubbling mozzarella, and just the right kick</div>
         </div>
       </div>
-    </div>
 
+    </div>
     <div class="celebration-section">
       <h2>Celebrating Local Excellence</h2>
-      <p>These wins are a celebration of the hard work, passion, and dedication that go into running a successful independent food business. From Denton Burn to Birtley, the Mealzo platform is proud to support and showcase the best local talent in takeaway dining.</p>
-      <p class="footer">Congratulations to all four winners – the pride of Newcastle's food scene!</p>
+      <p>These awards honour the dedication, skill, and passion behind every independent food business. From Denton Burn to Birtley, Mealzo proudly champions the finest local talent in the North East’s takeaway scene.</p>
+      <p class="footer">Congratulations to all four recipients—the pride of Newcastle’s food community.</p>
     </div>
   </div>
 </body>
