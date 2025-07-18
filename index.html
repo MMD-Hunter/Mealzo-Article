@@ -7,15 +7,17 @@
   <link href="https://fonts.googleapis.com/css?family=Inter:400,600,700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #233863;
+      --primary: #22365d;
       --secondary: #ffb300;
-      --background: #f4f6fb;
+      --background: #f8fafd;
       --card-bg: #fff;
-      --text: #1a1a1a;
+      --text: #212533;
       --border: #e3e8f0;
       --accent: #2a4267;
-      --shadow: 0 8px 28px rgba(35,56,99,0.10);
-      --radius: 12px;
+      --caption: #6d7586;
+      --shadow: 0 8px 28px rgba(40,50,90,0.12);
+      --shadow-hover: 0 18px 38px rgba(40,50,90,0.16);
+      --radius: 7px;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -25,44 +27,41 @@
       min-height: 100vh;
     }
     .container {
-      max-width: 1020px;
+      max-width: 780px;
       margin: 0 auto;
-      padding: 42px 10px 32px 10px;
+      padding: 48px 12px 36px 12px;
     }
     .header {
       background: var(--card-bg);
       border-radius: var(--radius);
-      padding: 34px 30px 26px 30px;
+      padding: 38px 34px 26px 34px;
       box-shadow: var(--shadow);
       border: 1px solid var(--border);
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 44px;
     }
     .logo img {
-      max-width: 170px;
-      margin-bottom: 18px;
-      filter: grayscale(7%) drop-shadow(0 4px 12px rgba(32, 56, 100, 0.08));
+      max-width: 160px;
+      margin-bottom: 16px;
+      filter: grayscale(7%) drop-shadow(0 4px 14px rgba(40,50,90,0.09));
     }
     h1 {
-      font-size: 2.5em;
+      font-size: 2.4em;
       font-weight: 700;
       color: var(--primary);
       letter-spacing: -1px;
       margin-bottom: 10px;
     }
     .subtitle {
-      font-size: 1.12em;
+      font-size: 1.14em;
       color: #495364;
       margin-bottom: 2px;
     }
     .awards-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 38px;
-      margin-bottom: 56px;
-    }
-    @media (max-width: 900px) {
-      .awards-grid { grid-template-columns: 1fr; gap: 28px; }
+      display: flex;
+      flex-direction: column;
+      gap: 42px;
+      margin-bottom: 54px;
     }
     .award-card {
       background: var(--card-bg);
@@ -72,79 +71,69 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: box-shadow 0.22s, border-color 0.22s;
+      transition: box-shadow 0.2s, border-color 0.22s;
       min-height: 100%;
+      padding: 0;
+      margin-bottom: 0;
     }
     .award-card:hover {
-      box-shadow: 0 18px 52px rgba(35,56,99,0.14);
+      box-shadow: var(--shadow-hover);
       border-color: var(--secondary);
     }
     .award-header {
-      padding: 26px 36px 6px 36px;
+      padding: 26px 36px 2px 36px;
       background: var(--card-bg);
     }
     .award-title h2 {
-      font-size: 1.5em;
-      font-weight: 600;
+      font-size: 1.35em;
+      font-weight: 700;
       color: var(--accent);
-      margin-bottom: 2px;
+      margin-bottom: 1px;
       letter-spacing: -.2px;
     }
     .location {
-      font-size: 1em;
+      font-size: 0.97em;
       color: #7283a7;
       font-weight: 500;
+      margin-bottom: 2px;
     }
-    .image-container {
-      position: relative;
+    .image-wrapper {
       width: 100%;
-      background: #eaeef7;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 280px;
-      max-height: 380px;
+      display: block;
       margin: 0;
-      box-shadow: 0 4px 22px rgba(35,56,99,0.12);
+      background: linear-gradient(180deg, #eaf0f7 0%, #e6ebf2 100%);
+      box-shadow: 0 3px 18px rgba(40,50,90,0.09);
       border-radius: 0;
-      overflow: hidden;
+      border-bottom: 1px solid var(--border);
     }
     .award-image {
       width: 100%;
-      height: 360px;
-      object-fit: cover;
-      border: none;
-      filter: brightness(1.08) contrast(1.14) saturate(1.10) drop-shadow(0 1px 12px #23386324);
-      transition: transform .33s cubic-bezier(.25,.8,.25,1), filter .33s cubic-bezier(.25,.8,.25,1);
       display: block;
+      object-fit: cover;
+      min-height: 260px;
+      max-height: 390px;
+      height: 340px;
       background: #dde3ee;
+      filter: brightness(1.09) contrast(1.15) saturate(1.11);
     }
-    .award-card:hover .award-image {
-      transform: scale(1.045);
-      filter: brightness(1.14) contrast(1.22) saturate(1.16);
-    }
-    .image-caption {
-      position: absolute;
-      left: 0; right: 0; bottom: 0;
-      background: linear-gradient(180deg, rgba(35,56,99,0) 0%, rgba(35,56,99,0.70) 100%);
-      color: #fff;
-      font-size: 1.05em;
-      font-weight: 500;
-      padding: 15px 32px 13px 32px;
+    .caption {
+      font-size: 0.99em;
+      color: var(--caption);
+      margin: 7px 0 0 0;
+      padding: 0 36px;
+      font-style: normal;
       letter-spacing: .01em;
-      text-shadow: 0 2px 12px #23386350;
-      z-index: 2;
     }
     .content {
-      padding: 28px 36px 32px 36px;
+      padding: 24px 36px 32px 36px;
       flex: 1 1 auto;
       display: flex;
       flex-direction: column;
       background: var(--card-bg);
     }
     .content p {
-      margin-bottom: 12px;
-      font-size: 1.07em;
+      margin-bottom: 13px;
+      font-size: 1.02em;
       color: #2c3b4e;
     }
     .highlight {
@@ -153,60 +142,62 @@
       letter-spacing: .01em;
     }
     .quote {
-      background: #f2f6fc;
-      border-left: 3.3px solid var(--secondary);
-      padding: 15px 22px;
-      margin: 16px 0 13px 0;
-      border-radius: 7px;
+      background: #f3f6fc;
+      border-left: 3px solid var(--secondary);
+      padding: 13px 21px;
+      margin: 14px 0 10px 0;
+      border-radius: 6px;
       font-style: italic;
-      color: #30597b;
-      font-size: 1.04em;
+      color: #2b4766;
+      font-size: 1em;
     }
     .top-seller {
-      background: #e3e8f0;
+      background: #f3f4f7;
       color: var(--primary);
-      padding: 8px 16px;
-      border-radius: 8px;
+      padding: 7px 16px;
+      border-radius: 7px;
       font-weight: 600;
       display: inline-block;
-      margin-top: 8px;
-      font-size: 1em;
+      margin-top: 7px;
+      font-size: 0.98em;
+      letter-spacing: 0.02em;
     }
     .celebration-section {
       background: var(--card-bg);
       border-radius: var(--radius);
-      padding: 38px 28px;
+      padding: 34px 24px;
       text-align: center;
       box-shadow: var(--shadow);
       border: 1px solid var(--border);
     }
     .celebration-section h2 {
-      font-size: 2em;
-      margin-bottom: 18px;
+      font-size: 1.45em;
+      margin-bottom: 14px;
       color: var(--primary);
       letter-spacing: -.6px;
+      font-weight: 700;
     }
     .celebration-section p {
-      font-size: 1.13em;
+      font-size: 1.06em;
       color: #425064;
       margin-bottom: 0;
     }
     .footer {
       text-align: center;
       font-weight: 700;
-      font-size: 1.13em;
+      font-size: 1.04em;
       color: var(--secondary);
-      margin-top: 27px;
+      margin-top: 21px;
     }
-    @media (max-width: 750px) {
-      .container { padding: 10px 0; }
+    @media (max-width: 650px) {
+      .container { padding: 5px 0; }
       .header, .celebration-section, .award-card {
-        padding: 12px 3px;
+        padding: 10px 3px;
       }
       .awards-grid { gap: 14px; }
-      .award-header, .content { padding: 12px; }
-      .award-image { height: 160px; }
-      .image-caption { padding: 9px 13px 8px 13px; font-size: .98em; }
+      .award-header, .content { padding: 10px; }
+      .award-image { min-height: 110px; height: 120px; }
+      .caption { padding: 0 10px; }
     }
   </style>
 </head>
@@ -228,10 +219,10 @@
             <div class="location">Denton Burn</div>
           </div>
         </div>
-        <div class="image-container">
+        <div class="image-wrapper">
           <img class="award-image" src="https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Chick%20Pizz%20Denton%20Burn%202105.jpg" alt="Chick Pizz">
-          <div class="image-caption">Golden, crisp chicken – a Denton Burn favourite</div>
         </div>
+        <div class="caption">Golden, crisp chicken – Denton Burn’s favourite</div>
         <div class="content">
           <p>Locals in Denton Burn have long favoured Chick Pizz for its exceptional fried chicken—and now the recognition is official.</p>
           <p><span class="highlight">Stephen Phillip Burgon</span>, proprietor of Chick Pizz, expressed his gratitude for the Best Fried Chicken accolade.</p>
@@ -249,10 +240,10 @@
             <div class="location">Newcastle upon Tyne</div>
           </div>
         </div>
-        <div class="image-container">
+        <div class="image-wrapper">
           <img class="award-image" src="https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Airbrush-image-extender%20(1).jpeg" alt="Get Stuffed">
-          <div class="image-caption">Generous portions, bold flavours – city centre favourite</div>
         </div>
+        <div class="caption">Generous portions, bold flavours – city centre classic</div>
         <div class="content">
           <p><span class="highlight">Get Stuffed</span> has officially been recognised as the home of the finest kebab in Newcastle—a distinction well deserved according to its loyal clientele.</p>
           <p>Managed by <span class="highlight">Kerim Seven</span>, this city-centre establishment is renowned for generous portions and bold, distinctive flavours.</p>
@@ -270,10 +261,10 @@
             <div class="location">Columbia, Washington</div>
           </div>
         </div>
-        <div class="image-container">
+        <div class="image-wrapper">
           <img class="award-image" src="https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Ritz%20Fish%20-%20Chips%201095.jpg" alt="Ritz Fish & Chips">
-          <div class="image-caption">Classic fish and chips, freshly made – always popular</div>
         </div>
+        <div class="caption">Classic fish and chips, freshly made – always popular</div>
         <div class="content">
           <p><span class="highlight">Ritz Fish & Chips</span>, based in Columbia, has been recognised for excellence in traditional fare—earning the Best Fish & Chips title.</p>
           <p>Under the stewardship of <span class="highlight">Manveer Singh</span>, Ritz is celebrated for its flaky cod, crisp batter, and properly cooked chips.</p>
@@ -291,10 +282,10 @@
             <div class="location">Birtley</div>
           </div>
         </div>
-        <div class="image-container">
+        <div class="image-wrapper">
           <img class="award-image" src="https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Sorrento%20Birtley%201550.jpg" alt="Sorrento Pizza Ltd">
-          <div class="image-caption">Handcrafted pizzas, fresh ingredients, fast service</div>
         </div>
+        <div class="caption">Handcrafted pizzas, fresh ingredients, prompt service</div>
         <div class="content">
           <p><span class="highlight">Sorrento Pizza Ltd</span>, located in Birtley, has topped the rankings as Best Pizza, praised for handcrafted quality.</p>
           <p>Owner <span class="highlight">Ali Rowhani</span> and his team focus on using fresh ingredients and prompt service to delight customers.</p>
