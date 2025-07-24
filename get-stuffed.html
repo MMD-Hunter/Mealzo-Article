@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winner: Get Stuffed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --teal: #00CCBC;
+            --background-dark: #191919;
+            --card-background: #222;
+            --text-light: #FFFFFF;
+            --text-secondary: #a0a0a0;
+            --confetti-gold: #FFD700;
+            --radius: 12px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .winner-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 8px;
+        }
+        .location {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+        .description p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5em;
+        }
+        .award-quote {
+            background-color: #333;
+            border-left: 4px solid var(--confetti-gold);
+            padding: 20px 25px;
+            margin: 30px 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            border-radius: 0 8px 8px 0;
+        }
+        .top-seller {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--teal);
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            color: var(--teal);
+            text-decoration: none;
+            font-weight: 700;
+            padding: 10px 20px;
+            border: 2px solid var(--teal);
+            border-radius: 50px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .back-link:hover {
+            background-color: var(--teal);
+            color: var(--background-dark);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to All Winners</a>
+        <header style="margin-top: 40px;">
+            <h1>Get Stuffed – Best Kebab</h1>
+            <p class="location">Newcastle upon Tyne</p>
+        </header>
+        <img src="https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Airbrush-image-extender%20(1).jpeg" alt="Get Stuffed Kebab" class="winner-image">
+        <main class="description">
+            <p>
+                In the heart of the city, Get Stuffed has built a loyal following, one flavour-packed wrap at a time. Owned and operated by Kerim Seven, the takeaway has earned a reputation for generous portions, freshly prepared ingredients and that hard-to-find balance of quality and speed.
+            </p>
+            <div class="award-quote">
+                “We do not cut corners. It is quality ingredients, proper prep and good service. Winning this means a lot because it is based on what customers think. That is what really matters to us.”
+            </div>
+            <p class="top-seller">Top seller: Mixed doner kebab</p>
+        </main>
+    </div>
+</body>
+</html>
