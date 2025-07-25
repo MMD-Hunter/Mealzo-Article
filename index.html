@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mealzo for Business Awards 2025</title>
+    <title>Newcastle Winners | Mealzo Awards</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -13,189 +13,180 @@
             --background-dark: #191919;
             --text-light: #FFFFFF;
             --text-secondary: #a0a0a0;
-            --card-gradient: linear-gradient(180deg, rgba(25, 25, 25, 0) 0%, rgba(25, 25, 25, 0.8) 80%);
-            --radius: 12px;
             --confetti-gold: #FFD700;
             --confetti-yellow: #F0E68C;
             --confetti-dark-gold: #DAA520;
+            --card-gradient: linear-gradient(180deg, rgba(25, 25, 25, 0) 0%, rgba(25, 25, 25, 0.8) 80%);
+            --radius: 12px;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--background-dark);
             color: var(--text-light);
             line-height: 1.6;
         }
+        .back-to-home {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: 700;
+            z-index: 10;
+        }
         .hero {
             position: relative;
-            height: 70vh;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
             padding: 20px;
             overflow: hidden;
             perspective: 800px;
-            background: url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg') no-repeat center center/cover;
-            /* REMOVED flexbox properties to use a more robust centering method */
         }
-
-        /* ✨ NEW: Wrapper to reliably center the hero content */
-        .hero-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 90%;
-            z-index: 2;
-        }
-        
-        .hero-video-bg {
-            position: absolute; top: 50%; left: 50%;
-            width: 100%; height: 100%; object-fit: cover;
-            transform: translate(-50%, -50%); z-index: -2;
-            filter: brightness(0.7);
-        }
-        .hero-overlay {
-            position: absolute; top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); z-index: -1;
-        }
+        .hero-video-bg { position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; object-fit: cover; transform: translate(-50%, -50%); z-index: -2; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); z-index: -1; }
         .hero-logo img { max-width: 180px; margin-bottom: 24px; }
-        .hero h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: clamp(2.8rem, 7vw, 5rem);
-            font-weight: 700; letter-spacing: -1px; max-width: 900px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* --- 3D Confetti Particle Effect --- */
-        .particles {
-            position: absolute; top: 0; left: 0;
-            width: 100%; height: 100%; overflow: hidden;
-            z-index: 1; transform-style: preserve-3d;
-        }
+        .hero h1 { font-family: 'Poppins', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700; letter-spacing: -1px; max-width: 800px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); z-index: 2; }
+        .particles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 1; transform-style: preserve-3d; }
         .particle { position: absolute; animation: animate-confetti-3d linear infinite; }
-        @keyframes animate-confetti-3d {
-            0% { transform: translateY(-10vh) rotateX(0) rotateY(0); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(100vh) rotateX(540deg) rotateY(1080deg); opacity: 0; }
-        }
-        /* --- Particle styles (120 total) --- */
-        .particle:nth-child(1){width:10px;height:7px;top:-10%;left:25%;background-color:var(--confetti-gold);animation-duration:12s;animation-delay:-3s} .particle:nth-child(2){width:8px;height:5px;top:-10%;left:55%;background-color:var(--confetti-yellow);animation-duration:8s;animation-delay:-1s} .particle:nth-child(3){width:9px;height:6px;top:-10%;left:80%;background-color:var(--confetti-dark-gold);animation-duration:15s;animation-delay:-5s} .particle:nth-child(4){width:7px;height:4px;top:-10%;left:10%;background-color:var(--confetti-yellow);animation-duration:6s;animation-delay:-.5s} .particle:nth-child(5){width:12px;height:8px;top:-10%;left:90%;background-color:var(--confetti-gold);animation-duration:18s;animation-delay:-7s} .particle:nth-child(6){width:8px;height:5px;top:-10%;left:5%;background-color:var(--confetti-dark-gold);animation-duration:11s;animation-delay:-2s} .particle:nth-child(7){width:9px;height:6px;top:-10%;left:40%;background-color:var(--confetti-gold);animation-duration:13s;animation-delay:-4s} .particle:nth-child(8){width:7px;height:4px;top:-10%;left:70%;background-color:var(--confetti-yellow);animation-duration:7s;animation-delay:-1.5s} .particle:nth-child(9){width:11px;height:7px;top:-10%;left:50%;background-color:var(--confetti-dark-gold);animation-duration:16s;animation-delay:-6s} .particle:nth-child(10){width:8px;height:5px;top:-10%;left:20%;background-color:var(--confetti-gold);animation-duration:9s;animation-delay:-2.5s} .particle:nth-child(11){width:7px;height:4px;top:-10%;left:65%;background-color:var(--confetti-yellow);animation-duration:10s;animation-delay:-3.5s} .particle:nth-child(12){width:9px;height:6px;top:-10%;left:33%;background-color:var(--confetti-dark-gold);animation-duration:14s;animation-delay:-4.5s} .particle:nth-child(13){width:12px;height:8px;top:-10%;left:75%;background-color:var(--confetti-gold);animation-duration:20s;animation-delay:-8s} .particle:nth-child(14){width:8px;height:5px;top:-10%;left:15%;background-color:var(--confetti-yellow);animation-duration:12s;animation-delay:-3s} .particle:nth-child(15){width:11px;height:7px;top:-10%;left:85%;background-color:var(--confetti-dark-gold);animation-duration:17s;animation-delay:-6.5s} .particle:nth-child(16){width:7px;height:4px;top:-10%;left:28%;background-color:var(--confetti-gold);animation-duration:8s;animation-delay:-1.2s} .particle:nth-child(17){width:9px;height:6px;top:-10%;left:48%;background-color:var(--confetti-yellow);animation-duration:13s;animation-delay:-5.5s} .particle:nth-child(18){width:8px;height:5px;top:-10%;left:95%;background-color:var(--confetti-dark-gold);animation-duration:10s;animation-delay:-3.8s} .particle:nth-child(19){width:11px;height:7px;top:-10%;left:60%;background-color:var(--confetti-gold);animation-duration:15s;animation-delay:-7.2s} .particle:nth-child(20){width:7px;height:4px;top:-10%;left:2%;background-color:var(--confetti-yellow);animation-duration:9s;animation-delay:-2.8s} .particle:nth-child(21){width:13px;height:8px;top:-10%;left:18%;background-color:var(--confetti-dark-gold);animation-duration:19s;animation-delay:-9s} .particle:nth-child(22){width:8px;height:5px;top:-10%;left:78%;background-color:var(--confetti-gold);animation-duration:11s;animation-delay:-4.2s} .particle:nth-child(23){width:9px;height:6px;top:-10%;left:42%;background-color:var(--confetti-yellow);animation-duration:14s;animation-delay:-6.8s} .particle:nth-child(24){width:7px;height:4px;top:-10%;left:58%;background-color:var(--confetti-dark-gold);animation-duration:7s;animation-delay:-1.8s} .particle:nth-child(25){width:11px;height:7px;top:-10%;left:38%;background-color:var(--confetti-gold);animation-duration:16s;animation-delay:-8.5s} .particle:nth-child(26){width:14px;height:9px;top:-10%;left:88%;background-color:var(--confetti-yellow);animation-duration:22s;animation-delay:-10s} .particle:nth-child(27){width:9px;height:6px;top:-10%;left:8%;background-color:var(--confetti-dark-gold);animation-duration:13s;animation-delay:-2.4s} .particle:nth-child(28){width:7px;height:4px;top:-10%;left:98%;background-color:var(--confetti-gold);animation-duration:8s;animation-delay:-4.1s} .particle:nth-child(29){width:11px;height:7px;top:-10%;left:22%;background-color:var(--confetti-yellow);animation-duration:17s;animation-delay:-9.2s} .particle:nth-child(30){width:8px;height:5px;top:-10%;left:72%;background-color:var(--confetti-dark-gold);animation-duration:12s;animation-delay:-5.8s} .particle:nth-child(31){width:10px;height:7px;top:-10%;left:31%;background-color:var(--confetti-gold);animation-duration:14s;animation-delay:-4s} .particle:nth-child(32){width:8px;height:5px;top:-10%;left:61%;background-color:var(--confetti-yellow);animation-duration:9s;animation-delay:-2s} .particle:nth-child(33){width:9px;height:6px;top:-10%;left:81%;background-color:var(--confetti-dark-gold);animation-duration:16s;animation-delay:-6s} .particle:nth-child(34){width:7px;height:4px;top:-10%;left:11%;background-color:var(--confetti-yellow);animation-duration:7s;animation-delay:-1.5s} .particle:nth-child(35){width:12px;height:8px;top:-10%;left:91%;background-color:var(--confetti-gold);animation-duration:19s;animation-delay:-8s} .particle:nth-child(36){width:8px;height:5px;top:-10%;left:6%;background-color:var(--confetti-dark-gold);animation-duration:12s;animation-delay:-3s} .particle:nth-child(37){width:9px;height:6px;top:-10%;left:41%;background-color:var(--confetti-gold);animation-duration:14s;animation-delay:-5s} .particle:nth-child(38){width:7px;height:4px;top:-10%;left:71%;background-color:var(--confetti-yellow);animation-duration:8s;animation-delay:-2.5s} .particle:nth-child(39){width:11px;height:7px;top:-10%;left:51%;background-color:var(--confetti-dark-gold);animation-duration:17s;animation-delay:-7s} .particle:nth-child(40){width:8px;height:5px;top:-10%;left:21%;background-color:var(--confetti-gold);animation-duration:10s;animation-delay:-3.5s} .particle:nth-child(41){width:15px;height:10px;top:-10%;left:1%;background-color:var(--confetti-gold);animation-duration:25s;animation-delay:-12s} .particle:nth-child(42){width:10px;height:7px;top:-10%;left:12%;background-color:var(--confetti-yellow);animation-duration:15s;animation-delay:-6s} .particle:nth-child(43){width:12px;height:8px;top:-10%;left:24%;background-color:var(--confetti-dark-gold);animation-duration:18s;animation-delay:-8s} .particle:nth-child(44){width:9px;height:6px;top:-10%;left:36%;background-color:var(--confetti-yellow);animation-duration:10s;animation-delay:-3s} .particle:nth-child(45){width:14px;height:9px;top:-10%;left:46%;background-color:var(--confetti-gold);animation-duration:20s;animation-delay:-10s} .particle:nth-child(46){width:10px;height:7px;top:-10%;left:56%;background-color:var(--confetti-dark-gold);animation-duration:13s;animation-delay:-4s} .particle:nth-child(47){width:11px;height:7px;top:-10%;left:66%;background-color:var(--confetti-gold);animation-duration:16s;animation-delay:-7s} .particle:nth-child(48){width:8px;height:5px;top:-10%;left:76%;background-color:var(--confetti-yellow);animation-duration:9s;animation-delay:-2s} .particle:nth-child(49){width:13px;height:8px;top:-10%;left:86%;background-color:var(--confetti-dark-gold);animation-duration:19s;animation-delay:-9s} .particle:nth-child(50){width:10px;height:7px;top:-10%;left:96%;background-color:var(--confetti-gold);animation-duration:11s;animation-delay:-5s} .particle:nth-child(51){width:8px;height:5px;top:-10%;left:3%;background-color:var(--confetti-yellow);animation-duration:10s;animation-delay:-1s} .particle:nth-child(52){width:12px;height:8px;top:-10%;left:13%;background-color:var(--confetti-dark-gold);animation-duration:18s;animation-delay:-7s} .particle:nth-child(53){width:9px;height:6px;top:-10%;left:23%;background-color:var(--confetti-gold);animation-duration:12s;animation-delay:-4s} .particle:nth-child(54){width:11px;height:7px;top:-10%;left:33%;background-color:var(--confetti-yellow);animation-duration:15s;animation-delay:-6s} .particle:nth-child(55){width:14px;height:9px;top:-10%;left:43%;background-color:var(--confetti-dark-gold);animation-duration:21s;animation-delay:-11s} .particle:nth-child(56){width:10px;height:7px;top:-10%;left:53%;background-color:var(--confetti-gold);animation-duration:14s;animation-delay:-5s} .particle:nth-child(57){width:8px;height:5px;top:-10%;left:63%;background-color:var(--confetti-yellow);animation-duration:9s;animation-delay:-3s} .particle:nth-child(58){width:13px;height:8px;top:-10%;left:73%;background-color:var(--confetti-dark-gold);animation-duration:19s;animation-delay:-8s} .particle:nth-child(59){width:9px;height:6px;top:-10%;left:83%;background-color:var(--confetti-gold);animation-duration:11s;animation-delay:-2s} .particle:nth-child(60){width:12px;height:8px;top:-10%;left:93%;background-color:var(--confetti-yellow);animation-duration:16s;animation-delay:-9s} .particle:nth-child(61){width:10px;height:7px;top:-10%;left:1%;background-color:var(--confetti-dark-gold);animation-duration:13s;animation-delay:-.2s} .particle:nth-child(62){width:8px;height:5px;top:-10%;left:9%;background-color:var(--confetti-gold);animation-duration:9s;animation-delay:-1.2s} .particle:nth-child(63){width:9px;height:6px;top:-10%;left:19%;background-color:var(--confetti-yellow);animation-duration:16s;animation-delay:-2.2s} .particle:nth-child(64){width:7px;height:4px;top:-10%;left:29%;background-color:var(--confetti-dark-gold);animation-duration:7s;animation-delay:-3.2s} .particle:nth-child(65){width:12px;height:8px;top:-10%;left:39%;background-color:var(--confetti-gold);animation-duration:19s;animation-delay:-4.2s} .particle:nth-child(66){width:8px;height:5px;top:-10%;left:49%;background-color:var(--confetti-yellow);animation-duration:12s;animation-delay:-5.2s} .particle:nth-child(67){width:9px;height:6px;top:-10%;left:59%;background-color:var(--confetti-dark-gold);animation-duration:14s;animation-delay:-6.2s} .particle:nth-child(68){width:7px;height:4px;top:-10%;left:69%;background-color:var(--confetti-gold);animation-duration:8s;animation-delay:-7.2s} .particle:nth-child(69){width:11px;height:7px;top:-10%;left:79%;background-color:var(--confetti-yellow);animation-duration:17s;animation-delay:-8.2s} .particle:nth-child(70){width:8px;height:5px;top:-10%;left:89%;background-color:var(--confetti-dark-gold);animation-duration:10s;animation-delay:-9.2s} .particle:nth-child(71){width:7px;height:4px;top:-10%;left:99%;background-color:var(--confetti-gold);animation-duration:11s;animation-delay:-10.2s} .particle:nth-child(72){width:9px;height:6px;top:-10%;left:7%;background-color:var(--confetti-yellow);animation-duration:15s;animation-delay:-11.2s} .particle:nth-child(73){width:12px;height:8px;top:-10%;left:17%;background-color:var(--confetti-dark-gold);animation-duration:21s;animation-delay:-12.2s} .particle:nth-child(74){width:8px;height:5px;top:-10%;left:27%;background-color:var(--confetti-gold);animation-duration:13s;animation-delay:-13.2s} .particle:nth-child(75){width:11px;height:7px;top:-10%;left:37%;background-color:var(--confetti-yellow);animation-duration:18s;animation-delay:-14.2s} .particle:nth-child(76){width:7px;height:4px;top:-10%;left:47%;background-color:var(--confetti-dark-gold);animation-duration:9s;animation-delay:-15.2s} .particle:nth-child(77){width:9px;height:6px;top:-10%;left:57%;background-color:var(--confetti-gold);animation-duration:14s;animation-delay:-16.2s} .particle:nth-child(78){width:8px;height:5px;top:-10%;left:67%;background-color:var(--confetti-yellow);animation-duration:11s;animation-delay:-17.2s} .particle:nth-child(79){width:11px;height:7px;top:-10%;left:77%;background-color:var(--confetti-dark-gold);animation-duration:16s;animation-delay:-18.2s} .particle:nth-child(80){width:7px;height:4px;top:-10%;left:87%;background-color:var(--confetti-gold);animation-duration:10s;animation-delay:-19.2s} .particle:nth-child(81){width:13px;height:8px;top:-10%;left:97%;background-color:var(--confetti-yellow);animation-duration:20s;animation-delay:-20.2s} .particle:nth-child(82){width:8px;height:5px;top:-10%;left:4%;background-color:var(--confetti-dark-gold);animation-duration:12s;animation-delay:-.8s} .particle:nth-child(83){width:9px;height:6px;top:-10%;left:14%;background-color:var(--confetti-gold);animation-duration:15s;animation-delay:-1.8s} .particle:nth-child(84){width:7px;height:4px;top:-10%;left:24%;background-color:var(--confetti-yellow);animation-duration:7s;animation-delay:-2.8s} .particle:nth-child(85){width:12px;height:8px;top:-10%;left:34%;background-color:var(--confetti-dark-gold);animation-duration:19s;animation-delay:-3.8s} .particle:nth-child(86){width:8px;height:5px;top:-10%;left:44%;background-color:var(--confetti-gold);animation-duration:13s;animation-delay:-4.8s} .particle:nth-child(87){width:9px;height:6px;top:-10%;left:54%;background-color:var(--confetti-yellow);animation-duration:15s;animation-delay:-5.8s} .particle:nth-child(88){width:7px;height:4px;top:-10%;left:64%;background-color:var(--confetti-dark-gold);animation-duration:9s;animation-delay:-6.8s} .particle:nth-child(89){width:11px;height:7px;top:-10%;left:74%;background-color:var(--confetti-gold);animation-duration:18s;animation-delay:-7.8s} .particle:nth-child(90){width:8px;height:5px;top:-10%;left:84%;background-color:var(--confetti-yellow);animation-duration:11s;animation-delay:-8.8s} .particle:nth-child(91){width:7px;height:4px;top:-10%;left:94%;background-color:var(--confetti-dark-gold);animation-duration:12s;animation-delay:-9.8s} .particle:nth-child(92){width:9px;height:6px;top:-10%;left:3%;background-color:var(--confetti-gold);animation-duration:16s;animation-delay:-10.8s} .particle:nth-child(93){width:12px;height:8px;top:-10%;left:13%;background-color:var(--confetti-yellow);animation-duration:22s;animation-delay:-11.8s} .particle:nth-child(94){width:8px;height:5px;top:-10%;left:23%;background-color:var(--confetti-dark-gold);animation-duration:14s;animation-delay:-12.8s} .particle:nth-child(95){width:11px;height:7px;top:-10%;left:33%;background-color:var(--confetti-gold);animation-duration:19s;animation-delay:-13.8s} .particle:nth-child(96){width:7px;height:4px;top:-10%;left:43%;background-color:var(--confetti-yellow);animation-duration:10s;animation-delay:-14.8s} .particle:nth-child(97){width:9px;height:6px;top:-10%;left:53%;background-color:var(--confetti-dark-gold);animation-duration:15s;animation-delay:-15.8s} .particle:nth-child(98){width:8px;height:5px;top:-10%;left:63%;background-color:var(--confetti-gold);animation-duration:12s;animation-delay:-16.8s} .particle:nth-child(99){width:11px;height:7px;top:-10%;left:73%;background-color:var(--confetti-yellow);animation-duration:17s;animation-delay:-17.8s} .particle:nth-child(100){width:7px;height:4px;top:-10%;left:83%;background-color:var(--confetti-dark-gold);animation-duration:11s;animation-delay:-18.8s} .particle:nth-child(101){width:13px;height:8px;top:-10%;left:93%;background-color:var(--confetti-gold);animation-duration:21s;animation-delay:-19.8s} .particle:nth-child(102){width:8px;height:5px;top:-10%;left:2%;background-color:var(--confetti-yellow);animation-duration:13s;animation-delay:-.4s} .particle:nth-child(103){width:9px;height:6px;top:-10%;left:12%;background-color:var(--confetti-dark-gold);animation-duration:16s;animation-delay:-1.4s} .particle:nth-child(104){width:7px;height:4px;top:-10%;left:22%;background-color:var(--confetti-gold);animation-duration:8s;animation-delay:-2.4s} .particle:nth-child(105){width:12px;height:8px;top:-10%;left:32%;background-color:var(--confetti-yellow);animation-duration:20s;animation-delay:-3.4s} .particle:nth-child(106){width:8px;height:5px;top:-10%;left:42%;background-color:var(--confetti-dark-gold);animation-duration:14s;animation-delay:-4.4s} .particle:nth-child(107){width:9px;height:6px;top:-10%;left:52%;background-color:var(--confetti-gold);animation-duration:16s;animation-delay:-5.4s} .particle:nth-child(108){width:7px;height:4px;top:-10%;left:62%;background-color:var(--confetti-yellow);animation-duration:10s;animation-delay:-6.4s} .particle:nth-child(109){width:11px;height:7px;top:-10%;left:72%;background-color:var(--confetti-dark-gold);animation-duration:19s;animation-delay:-7.4s} .particle:nth-child(110){width:8px;height:5px;top:-10%;left:82%;background-color:var(--confetti-gold);animation-duration:12s;animation-delay:-8.4s} .particle:nth-child(111){width:7px;height:4px;top:-10%;left:92%;background-color:var(--confetti-yellow);animation-duration:13s;animation-delay:-9.4s} .particle:nth-child(112){width:9px;height:6px;top:-10%;left:1%;background-color:var(--confetti-dark-gold);animation-duration:17s;animation-delay:-10.4s} .particle:nth-child(113){width:12px;height:8px;top:-10%;left:11%;background-color:var(--confetti-gold);animation-duration:23s;animation-delay:-11.4s} .particle:nth-child(114){width:8px;height:5px;top:-10%;left:21%;background-color:var(--confetti-yellow);animation-duration:15s;animation-delay:-12.4s} .particle:nth-child(115){width:11px;height:7px;top:-10%;left:31%;background-color:var(--confetti-dark-gold);animation-duration:20s;animation-delay:-13.4s} .particle:nth-child(116){width:7px;height:4px;top:-10%;left:41%;background-color:var(--confetti-gold);animation-duration:11s;animation-delay:-14.4s} .particle:nth-child(117){width:9px;height:6px;top:-10%;left:51%;background-color:var(--confetti-yellow);animation-duration:16s;animation-delay:-15.4s} .particle:nth-child(118){width:8px;height:5px;top:-10%;left:61%;background-color:var(--confetti-dark-gold);animation-duration:13s;animation-delay:-16.4s} .particle:nth-child(119){width:11px;height:7px;top:-10%;left:71%;background-color:var(--confetti-gold);animation-duration:18s;animation-delay:-17.4s} .particle:nth-child(120){width:7px;height:4px;top:-10%;left:81%;background-color:var(--confetti-yellow);animation-duration:12s;animation-delay:-18.4s}
-        
+        @keyframes animate-confetti-3d { 0% { transform: translateY(-10vh) rotateX(0) rotateY(0); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh) rotateX(540deg) rotateY(1080deg); opacity: 0; } }
+        /* Particle styles... */
+        .particle:nth-child(1){width:10px;height:7px;top:-10%;left:25%;background-color:var(--confetti-gold);animation-duration:12s;animation-delay:-3s} .particle:nth-child(2){width:8px;height:5px;top:-10%;left:55%;background-color:var(--confetti-yellow);animation-duration:8s;animation-delay:-1s} .particle:nth-child(3){width:9px;height:6px;top:-10%;left:80%;background-color:var(--confetti-dark-gold);animation-duration:15s;animation-delay:-5s} .particle:nth-child(4){width:7px;height:4px;top:-10%;left:10%;background-color:var(--confetti-yellow);animation-duration:6s;animation-delay:-.5s} .particle:nth-child(5){width:12px;height:8px;top:-10%;left:90%;background-color:var(--confetti-gold);animation-duration:18s;animation-delay:-7s} .particle:nth-child(6){width:8px;height:5px;top:-10%;left:5%;background-color:var(--confetti-dark-gold);animation-duration:11s;animation-delay:-2s} .particle:nth-child(7){width:9px;height:6px;top:-10%;left:40%;background-color:var(--confetti-gold);animation-duration:13s;animation-delay:-4s} .particle:nth-child(8){width:7px;height:4px;top:-10%;left:70%;background-color:var(--confetti-yellow);animation-duration:7s;animation-delay:-1.5s} .particle:nth-child(9){width:11px;height:7px;top:-10%;left:50%;background-color:var(--confetti-dark-gold);animation-duration:16s;animation-delay:-6s} .particle:nth-child(10){width:8px;height:5px;top:-10%;left:20%;background-color:var(--confetti-gold);animation-duration:9s;animation-delay:-2.5s} .particle:nth-child(11){width:7px;height:4px;top:-10%;left:65%;background-color:var(--confetti-yellow);animation-duration:10s;animation-delay:-3.5s} .particle:nth-child(12){width:9px;height:6px;top:-10%;left:33%;background-color:var(--confetti-dark-gold);animation-duration:14s;animation-delay:-4.5s} .particle:nth-child(13){width:12px;height:8px;top:-10%;left:75%;background-color:var(--confetti-gold);animation-duration:20s;animation-delay:-8s} .particle:nth-child(14){width:8px;height:5px;top:-10%;left:15%;background-color:var(--confetti-yellow);animation-duration:12s;animation-delay:-3s} .particle:nth-child(15){width:11px;height:7px;top:-10%;left:85%;background-color:var(--confetti-dark-gold);animation-duration:17s;animation-delay:-6.5s} .particle:nth-child(16){width:7px;height:4px;top:-10%;left:28%;background-color:var(--confetti-gold);animation-duration:8s;animation-delay:-1.2s} .particle:nth-child(17){width:9px;height:6px;top:-10%;left:48%;background-color:var(--confetti-yellow);animation-duration:13s;animation-delay:-5.5s} .particle:nth-child(18){width:8px;height:5px;top:-10%;left:95%;background-color:var(--confetti-dark-gold);animation-duration:10s;animation-delay:-3.8s} .particle:nth-child(19){width:11px;height:7px;top:-10%;left:60%;background-color:var(--confetti-gold);animation-duration:15s;animation-delay:-7.2s} .particle:nth-child(20){width:7px;height:4px;top:-10%;left:2%;background-color:var(--confetti-yellow);animation-duration:9s;animation-delay:-2.8s}
         .content-container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
         .intro-section { text-align: center; max-width: 750px; margin: 0 auto 60px auto; }
-        .intro-section h2 { font-family: 'Poppins', sans-serif; font-size: 2.5rem; color: var(--orange); margin-bottom: 16px; }
+        .intro-section h2 { font-family: 'Poppins', sans-serif; font-size: 2rem; color: var(--orange); margin-bottom: 16px; }
         .intro-section p { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; }
-        
-        .city-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 24px;
-        }
-        .city-card {
-            position: relative;
-            border-radius: var(--radius);
-            overflow: hidden;
-            aspect-ratio: 16 / 10;
-            display: flex;
-            align-items: flex-end;
-            justify-content: flex-start;
-            text-decoration: none;
-            color: var(--text-light);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .city-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-        }
-        .city-card-bg {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            object-fit: cover;
-            z-index: -2;
-            transition: transform 0.4s ease;
-        }
-        .city-card:hover .city-card-bg {
-            transform: scale(1.05);
-        }
-        .city-card-overlay {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
-            z-index: -1;
-        }
-        .city-card-content {
-            padding: 24px;
-        }
-        .city-card-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-        }
-        .city-card-subtitle {
-            font-size: 1rem;
-            color: var(--text-secondary);
-        }
+        .awards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .award-card { position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 3 / 4; cursor: pointer; }
+        .award-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+        .award-card-content { position: absolute; bottom: 0; left: 0; width: 100%; padding: 24px 20px; background: var(--card-gradient); z-index: 2; }
+        .award-card-title { font-size: 1.25rem; font-weight: 700; color: var(--text-light); margin-bottom: 4px; }
+        .award-card-category { font-size: 1rem; color: var(--text-secondary); }
+        .award-card-hover-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(252, 82, 3, 0.9); display: flex; flex-direction: column; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.4s ease; z-index: 3; }
+        .award-card:hover .award-card-hover-overlay { opacity: 1; }
+        .award-card:hover img { transform: scale(1.05); }
+        .hover-button { padding: 12px 24px; border: 2px solid var(--text-light); border-radius: 50px; color: var(--text-light); background-color: transparent; font-weight: 700; text-decoration: none; transition: background-color 0.3s, color 0.3s; }
+        .hover-button:hover { background-color: var(--text-light); color: var(--orange); }
+        /* Winner Details Card Styling */
+        .winner-details-container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .winner-details-card { background-color: #222; border-radius: var(--radius); padding: 30px 40px; margin-bottom: 30px; border-top: 4px solid var(--orange); }
+        .winner-details-card h2 { font-family: 'Poppins', sans-serif; font-size: 2rem; margin-bottom: 8px; }
+        .winner-details-card .location { color: var(--text-secondary); font-weight: 500; margin-bottom: 20px; }
+        .award-quote { background-color: #333; border-left: 4px solid var(--confetti-gold); padding: 15px 20px; margin: 20px 0; font-style: italic; border-radius: 0 8px 8px 0; }
         .footer { text-align: center; padding: 40px 20px; margin-top: 40px; border-top: 1px solid #2a2a2a; }
         .footer p { color: var(--text-secondary); font-size: 0.9rem; }
-
-        @media (max-width: 768px) {
-            .hero-video-bg {
-                display: none;
-            }
-        }
-    </style>
+  </style>
 </head>
 <body>
+    <a href="index.html" class="back-to-home">← Back to Home</a>
     <header class="hero">
         <div class="hero-overlay"></div>
         <video class="hero-video-bg" poster="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg" autoplay loop muted playsinline>
             <source src="https://videos.pexels.com/video-files/3209828/3209828-hd_1920_1080_25fps.mp4" type="video/mp4">
         </video>
         <div class="particles">
-            <span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span>
+            <span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span>
         </div>
-        <div class="hero-content">
-            <div class="hero-logo">
-                <img src="https://uploads.onecompiler.io/43jasxyr7/43r2gqsqx/Mealzoforbusiness%20logo%20W.png" alt="Mealzo for Business Logo">
-            </div>
-            <h1>Mealzo for Business Awards 2025</h1>
+        <div class="hero-logo">
+            <img src="https://uploads.onecompiler.io/43jasxyr7/43r2gqsqx/Mealzoforbusiness%20logo%20W.png" alt="Mealzo for Business Logo">
         </div>
+        <h1>Newcastle Winners</h1>
     </header>
-
     <main class="content-container">
         <section class="intro-section">
-            <h2>Find Your Local Winners</h2>
+            <h2>Celebrating Local Excellence</h2>
             <p>
-                We're celebrating the best independent restaurants and takeaways across the nation. Select your city below to see the culinary champions who made the cut in your area.
+                The Mealzo for Business Awards shine a spotlight on the hard-working independent businesses that keep our local food scene thriving. Here are the four champions of 2025 for the Newcastle area.
             </p>
         </section>
-
-        <div class="city-grid">
-            <a href="newcastle.html" class="city-card">
-                <img src="https://images.pexels.com/photos/1483783/pexels-photo-1483783.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Newcastle upon Tyne" class="city-card-bg">
-                <div class="city-card-overlay"></div>
-                <div class="city-card-content">
-                    <h3 class="city-card-title">Newcastle</h3>
-                    <p class="city-card-subtitle">View Winners</p>
+        <div class="awards-grid">
+            <div class="award-card">
+                <img src="https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Chick%20Pizz%20Denton%20Burn%202105.jpg" alt="Chick Pizz receiving award">
+                <div class="award-card-content">
+                    <div class="award-card-title">Chick Pizz</div>
+                    <div class="award-card-category">Best Fried Chicken, Denton Burn</div>
                 </div>
-            </a>
-
-            <a href="#" class="city-card">
-                <img src="https://images.pexels.com/photos/1653877/pexels-photo-1653877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Birmingham" class="city-card-bg">
-                <div class="city-card-overlay"></div>
-                <div class="city-card-content">
-                    <h3 class="city-card-title">Birmingham</h3>
-                    <p class="city-card-subtitle">Coming Soon</p>
+                <div class="award-card-hover-overlay">
+                    <a href="#chick-pizz-details" class="hover-button">View Winner</a>
                 </div>
-            </a>
+            </div>
+            <div class="award-card">
+                <img src="https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Airbrush-image-extender%20(1).jpeg" alt="Get Stuffed Kebab">
+                <div class="award-card-content">
+                    <div class="award-card-title">Get Stuffed</div>
+                    <div class="award-card-category">Best Kebab, Newcastle upon Tyne</div>
+                </div>
+                <div class="award-card-hover-overlay">
+                    <a href="#get-stuffed-details" class="hover-button">View Winner</a>
+                </div>
+            </div>
+            <div class="award-card">
+                <img src="https://uploads.onecompiler.io/43jasxyr7/43r2d7uw8/Ritz%20Fish%20-%20Chips%201095.jpg" alt="Ritz Fish & Chips receiving award">
+                <div class="award-card-content">
+                    <div class="award-card-title">Ritz Fish & Chips</div>
+                    <div class="award-card-category">Best Fish & Chips, Washington</div>
+                </div>
+                <div class="award-card-hover-overlay">
+                    <a href="#ritz-details" class="hover-button">View Winner</a>
+                </div>
+            </div>
+            <div class="award-card">
+                <img src="https://uploads.onecompiler.io/43jasxyr7/43r2wjdzz/Sorrento%20Birtley%201550%201.jpg" alt="Sorrento Pizza Ltd">
+                <div class="award-card-content">
+                    <div class="award-card-title">Sorrento Pizza</div>
+                    <div class="award-card-category">Best Pizza, Birtley</div>
+                </div>
+                <div class="award-card-hover-overlay">
+                    <a href="#sorrento-details" class="hover-button">View Winner</a>
+                </div>
+            </div>
         </div>
     </main>
-  
+
+    <div class="winner-details-container">
+        <section id="chick-pizz-details" class="winner-details-card">
+            <h2>Chick Pizz – Best Fried Chicken</h2>
+            <p class="location">Denton Burn</p>
+            <p>Tucked away in the heart of Denton Burn, Chick Pizz has been quietly building a reputation as the area’s go-to spot for proper fried chicken. Run by Stephen Phillip Burgon, Chick Pizz is known for doing things the old-fashioned way. Real ingredients, careful preparation and a team that puts pride into every single box that leaves the shop.</p>
+            <div class="award-quote">
+                “This win is all down to our amazing customers and our team who put the effort in every day. We are proud to be part of the Mealzo community, and we are absolutely buzzing with the recognition.”
+            </div>
+            <p><b>Top seller:</b> Fried chicken box</p>
+        </section>
+        <section id="get-stuffed-details" class="winner-details-card">
+            <h2>Get Stuffed – Best Kebab</h2>
+            <p class="location">Newcastle upon Tyne</p>
+            <p>In the heart of the city, Get Stuffed has built a loyal following, one flavour-packed wrap at a time. Owned and operated by Kerim Seven, the takeaway has earned a reputation for generous portions, freshly prepared ingredients and that hard-to-find balance of quality and speed.</p>
+            <div class="award-quote">
+                “We do not cut corners. It is quality ingredients, proper prep and good service. Winning this means a lot because it is based on what customers think. That is what really matters to us.”
+            </div>
+            <p><b>Top seller:</b> Mixed doner kebab</p>
+        </section>
+        <section id="ritz-details" class="winner-details-card">
+            <h2>Ritz Fish & Chips – Best Fish & Chips</h2>
+            <p class="location">Columbia, Washington</p>
+            <p>No British awards list would be complete without a proper chippy. Ritz Fish & Chips, owned by Manveer Singh, has proven that tradition, quality and consistency never go out of style. Their best-selling order is the classic fish supper: flaky cod, hand-cut chips and mushy peas served just as they should be.</p>
+            <div class="award-quote">
+                “We are all about keeping it simple and doing it well. This award gives us a real boost and we are grateful to our customers for their support and trust over the years.”
+            </div>
+            <p><b>Top seller:</b> Traditional fish supper</p>
+        </section>
+        <section id="sorrento-details" class="winner-details-card">
+            <h2>Sorrento Pizza – Best Pizza</h2>
+            <p class="location">Birtley</p>
+            <p>Over in Birtley, Sorrento Pizza has been quietly leading the way. Founded by Ali Rowhani, Sorrento Pizza is built on one core principle: keep it fresh, and keep it real. That means handmade dough, high-quality toppings and pizzas cooked to perfection in their signature ovens.</p>
+            <div class="award-quote">
+                “It means a lot to be recognised like this. We have worked hard to build something people love, and Mealzo has helped us reach more of them, especially those who might not have known we were just around the corner.”
+            </div>
+            <p><b>Top seller:</b> Classic pepperoni</p>
+        </section>
+    </div>
+
     <footer class="footer">
         <p>© 2025 Mealzo for Business Awards. All rights reserved.</p>
     </footer>
