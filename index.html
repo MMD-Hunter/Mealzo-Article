@@ -28,20 +28,15 @@
         }
         .hero {
             position: relative;
-            height: 70vh;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
             padding: 20px;
             overflow: hidden;
             perspective: 800px;
-            /* REMOVED the fallback background image */
-        }
-        .hero-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 90%;
-            z-index: 2;
         }
         .hero-video-bg {
             position: absolute; top: 50%; left: 50%;
@@ -59,9 +54,8 @@
             font-family: 'Poppins', sans-serif;
             font-size: clamp(2.8rem, 7vw, 5rem);
             font-weight: 700; letter-spacing: -1px; max-width: 900px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-            margin-left: auto;
-            margin-right: auto;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5); 
+            z-index: 2;
         }
         .particles {
             position: absolute; top: 0; left: 0;
@@ -75,14 +69,12 @@
             90% { opacity: 1; }
             100% { transform: translateY(100vh) rotateX(540deg) rotateY(1080deg); opacity: 0; }
         }
-        /* --- Particle styles (120 total) --- */
-        .particle:nth-child(1){width:10px;height:7px;top:-10%;left:25%;background-color:var(--confetti-gold);animation-duration:12s;animation-delay:-3s} .particle:nth-child(2){width:8px;height:5px;top:-10%;left:55%;background-color:var(--confetti-yellow);animation-duration:8s;animation-delay:-1s} .particle:nth-child(3){width:9px;height:6px;top:-10%;left:80%;background-color:var(--confetti-dark-gold);animation-duration:15s;animation-delay:-5s} .particle:nth-child(4){width:7px;height:4px;top:-10%;left:10%;background-color:var(--confetti-yellow);animation-duration:6s;animation-delay:-.5s} .particle:nth-child(5){width:12px;height:8px;top:-10%;left:90%;background-color:var(--confetti-gold);animation-duration:18s;animation-delay:-7s} .particle:nth-child(6){width:8px;height:5px;top:-10%;left:5%;background-color:var(--confetti-dark-gold);animation-duration:11s;animation-delay:-2s} .particle:nth-child(7){width:9px;height:6px;top:-10%;left:40%;background-color:var(--confetti-gold);animation-duration:13s;animation-delay:-4s} .particle:nth-child(8){width:7px;height:4px;top:-10%;left:70%;background-color:var(--confetti-yellow);animation-duration:7s;animation-delay:-1.5s} .particle:nth-child(9){width:11px;height:7px;top:-10%;left:50%;background-color:var(--confetti-dark-gold);animation-duration:16s;animation-delay:-6s} .particle:nth-child(10){width:8px;height:5px;top:-10%;left:20%;background-color:var(--confetti-gold);animation-duration:9s;animation-delay:-2.5s} .particle:nth-child(11){width:7px;height:4px;top:-10%;left:65%;background-color:var(--confetti-yellow);animation-duration:10s;animation-delay:-3.5s} .particle:nth-child(12){width:9px;height:6px;top:-10%;left:33%;background-color:var(--confetti-dark-gold);animation-duration:14s;animation-delay:-4.5s} .particle:nth-child(13){width:12px;height:8px;top:-10%;left:75%;background-color:var(--confetti-gold);animation-duration:20s;animation-delay:-8s} .particle:nth-child(14){width:8px;height:5px;top:-10%;left:15%;background-color:var(--confetti-yellow);animation-duration:12s;animation-delay:-3s} .particle:nth-child(15){width:11px;height:7px;top:-10%;left:85%;background-color:var(--confetti-dark-gold);animation-duration:17s;animation-delay:-6.5s} .particle:nth-child(16){width:7px;height:4px;top:-10%;left:28%;background-color:var(--confetti-gold);animation-duration:8s;animation-delay:-1.2s} .particle:nth-child(17){width:9px;height:6px;top:-10%;left:48%;background-color:var(--confetti-yellow);animation-duration:13s;animation-delay:-5.5s} .particle:nth-child(18){width:8px;height:5px;top:-10%;left:95%;background-color:var(--confetti-dark-gold);animation-duration:10s;animation-delay:-3.8s} .particle:nth-child(19){width:11px;height:7px;top:-10%;left:60%;background-color:var(--confetti-gold);animation-duration:15s;animation-delay:-7.2s} .particle:nth-child(20){width:7px;height:4px;top:-10%;left:2%;background-color:var(--confetti-yellow);animation-duration:9s;animation-delay:-2.8s} .particle:nth-child(21){width:13px;height:8px;top:-10%;left:18%;background-color:var(--confetti-dark-gold);animation-duration:19s;animation-delay:-9s} .particle:nth-child(22){width:8px;height:5px;top:-10%;left:78%;background-color:var(--confetti-gold);animation-duration:11s;animation-delay:-4.2s} .particle:nth-child(23){width:9px;height:6px;top:-10%;left:42%;background-color:var(--confetti-yellow);animation-duration:14s;animation-delay:-6.8s} .particle:nth-child(24){width:7px;height:4px;top:-10%;left:58%;background-color:var(--confetti-dark-gold);animation-duration:7s;animation-delay:-1.8s} .particle:nth-child(25){width:11px;height:7px;top:-10%;left:38%;background-color:var(--confetti-gold);animation-duration:16s;animation-delay:-8.5s} .particle:nth-child(26){width:14px;height:9px;top:-10%;left:88%;background-color:var(--confetti-yellow);animation-duration:22s;animation-delay:-10s} .particle:nth-child(27){width:9px;height:6px;top:-10%;left:8%;background-color:var(--confetti-dark-gold);animation-duration:13s;animation-delay:-2.4s} .particle:nth-child(28){width:7px;height:4px;top:-10%;left:98%;background-color:var(--confetti-gold);animation-duration:8s;animation-delay:-4.1s} .particle:nth-child(29){width:11px;height:7px;top:-10%;left:22%;background-color:var(--confetti-yellow);animation-duration:17s;animation-delay:-9.2s} .particle:nth-child(30){width:8px;height:5px;top:-10%;left:72%;background-color:var(--confetti-dark-gold);animation-duration:12s;animation-delay:-5.8s} .particle:nth-child(31){width:10px;height:7px;top:-10%;left:31%;background-color:var(--confetti-gold);animation-duration:14s;animation-delay:-4s} .particle:nth-child(32){width:8px;height:5px;top:-10%;left:61%;background-color:var(--confetti-yellow);animation-duration:9s;animation-delay:-2s} .particle:nth-child(33){width:9px;height:6px;top:-10%;left:81%;background-color:var(--confetti-dark-gold);animation-duration:16s;animation-delay:-6s} .particle:nth-child(34){width:7px;height:4px;top:-10%;left:11%;background-color:var(--confetti-yellow);animation-duration:7s;animation-delay:-1.5s} .particle:nth-child(35){width:12px;height:8px;top:-10%;left:91%;background-color:var(--confetti-gold);animation-duration:19s;animation-delay:-8s} .particle:nth-child(36){width:8px;height:5px;top:-10%;left:6%;background-color:var(--confetti-dark-gold);animation-duration:12s;animation-delay:-3s} .particle:nth-child(37){width:9px;height:6px;top:-10%;left:41%;background-color:var(--confetti-gold);animation-duration:14s;animation-delay:-5s} .particle:nth-child(38){width:7px;height:4px;top:-10%;left:71%;background-color:var(--confetti-yellow);animation-duration:8s;animation-delay:-2.5s} .particle:nth-child(39){width:11px;height:7px;top:-10%;left:51%;background-color:var(--confetti-dark-gold);animation-duration:17s;animation-delay:-7s} .particle:nth-child(40){width:8px;height:5px;top:-10%;left:21%;background-color:var(--confetti-gold);animation-duration:10s;animation-delay:-3.5s} .particle:nth-child(41){width:15px;height:10px;top:-10%;left:1%;background-color:var(--confetti-gold);animation-duration:25s;animation-delay:-12s} .particle:nth-child(42){width:10px;height:7px;top:-10%;left:12%;background-color:var(--confetti-yellow);animation-duration:15s;animation-delay:-6s} .particle:nth-child(43){width:12px;height:8px;top:-10%;left:24%;background-color:var(--confetti-dark-gold);animation-duration:18s;animation-delay:-8s} .particle:nth-child(44){width:9px;height:6px;top:-10%;left:36%;background-color:var(--confetti-yellow);animation-duration:10s;animation-delay:-3s} .particle:nth-child(45){width:14px;height:9px;top:-10%;left:46%;background-color:var(--confetti-gold);animation-duration:20s;animation-delay:-10s} .particle:nth-child(46){width:10px;height:7px;top:-10%;left:56%;background-color:var(--confetti-dark-gold);animation-duration:13s;animation-delay:-4s} .particle:nth-child(47){width:11px;height:7px;top:-10%;left:66%;background-color:var(--confetti-gold);animation-duration:16s;animation-delay:-7s} .particle:nth-child(48){width:8px;height:5px;top:-10%;left:76%;background-color:var(--confetti-yellow);animation-duration:9s;animation-delay:-2s} .particle:nth-child(49){width:13px;height:8px;top:-10%;left:86%;background-color:var(--confetti-dark-gold);animation-duration:19s;animation-delay:-9s} .particle:nth-child(50){width:10px;height:7px;top:-10%;left:96%;background-color:var(--confetti-gold);animation-duration:11s;animation-delay:-5s} .particle:nth-child(51){width:8px;height:5px;top:-10%;left:3%;background-color:var(--confetti-yellow);animation-duration:10s;animation-delay:-1s} .particle:nth-child(52){width:12px;height:8px;top:-10%;left:13%;background-color:var(--confetti-dark-gold);animation-duration:18s;animation-delay:-7s} .particle:nth-child(53){width:9px;height:6px;top:-10%;left:23%;background-color:var(--confetti-gold);animation-duration:12s;animation-delay:-4s} .particle:nth-child(54){width:11px;height:7px;top:-10%;left:33%;background-color:var(--confetti-yellow);animation-duration:15s;animation-delay:-6s} .particle:nth-child(55){width:14px;height:9px;top:-10%;left:43%;background-color:var(--confetti-dark-gold);animation-duration:21s;animation-delay:-11s} .particle:nth-child(56){width:10px;height:7px;top:-10%;left:53%;background-color:var(--confetti-gold);animation-duration:14s;animation-delay:-5s} .particle:nth-child(57){width:8px;height:5px;top:-10%;left:63%;background-color:var(--confetti-yellow);animation-duration:9s;animation-delay:-3s} .particle:nth-child(58){width:13px;height:8px;top:-10%;left:73%;background-color:var(--confetti-dark-gold);animation-duration:19s;animation-delay:-8s} .particle:nth-child(59){width:9px;height:6px;top:-10%;left:83%;background-color:var(--confetti-gold);animation-duration:11s;animation-delay:-2s} .particle:nth-child(60){width:12px;height:8px;top:-10%;left:93%;background-color:var(--confetti-yellow);animation-duration:16s;animation-delay:-9s} .particle:nth-child(61){width:10px;height:7px;top:-10%;left:1%;background-color:var(--confetti-dark-gold);animation-duration:13s;animation-delay:-.2s} .particle:nth-child(62){width:8px;height:5px;top:-10%;left:9%;background-color:var(--confetti-gold);animation-duration:9s;animation-delay:-1.2s} .particle:nth-child(63){width:9px;height:6px;top:-10%;left:19%;background-color:var(--confetti-yellow);animation-duration:16s;animation-delay:-2.2s} .particle:nth-child(64){width:7px;height:4px;top:-10%;left:29%;background-color:var(--confetti-dark-gold);animation-duration:7s;animation-delay:-3.2s} .particle:nth-child(65){width:12px;height:8px;top:-10%;left:39%;background-color:var(--confetti-gold);animation-duration:19s;animation-delay:-4.2s} .particle:nth-child(66){width:8px;height:5px;top:-10%;left:49%;background-color:var(--confetti-yellow);animation-duration:12s;animation-delay:-5.2s} .particle:nth-child(67){width:9px;height:6px;top:-10%;left:59%;background-color:var(--confetti-dark-gold);animation-duration:14s;animation-delay:-6.2s} .particle:nth-child(68){width:7px;height:4px;top:-10%;left:69%;background-color:var(--confetti-gold);animation-duration:8s;animation-delay:-7.2s} .particle:nth-child(69){width:11px;height:7px;top:-10%;left:79%;background-color:var(--confetti-yellow);animation-duration:17s;animation-delay:-8.2s} .particle:nth-child(70){width:8px;height:5px;top:-10%;left:89%;background-color:var(--confetti-dark-gold);animation-duration:10s;animation-delay:-9.2s} .particle:nth-child(71){width:7px;height:4px;top:-10%;left:99%;background-color:var(--confetti-gold);animation-duration:11s;animation-delay:-10.2s} .particle:nth-child(72){width:9px;height:6px;top:-10%;left:7%;background-color:var(--confetti-yellow);animation-duration:15s;animation-delay:-11.2s} .particle:nth-child(73){width:12px;height:8px;top:-10%;left:17%;background-color:var(--confetti-dark-gold);animation-duration:21s;animation-delay:-12.2s} .particle:nth-child(74){width:8px;height:5px;top:-10%;left:27%;background-color:var(--confetti-gold);animation-duration:13s;animation-delay:-13.2s} .particle:nth-child(75){width:11px;height:7px;top:-10%;left:37%;background-color:var(--confetti-yellow);animation-duration:18s;animation-delay:-14.2s} .particle:nth-child(76){width:7px;height:4px;top:-10%;left:47%;background-color:var(--confetti-dark-gold);animation-duration:9s;animation-delay:-15.2s} .particle:nth-child(77){width:9px;height:6px;top:-10%;left:57%;background-color:var(--confetti-gold);animation-duration:14s;animation-delay:-16.2s} .particle:nth-child(78){width:8px;height:5px;top:-10%;left:67%;background-color:var(--confetti-yellow);animation-duration:11s;animation-delay:-17.2s} .particle:nth-child(79){width:11px;height:7px;top:-10%;left:77%;background-color:var(--confetti-dark-gold);animation-duration:16s;animation-delay:-18.2s} .particle:nth-child(80){width:7px;height:4px;top:-10%;left:87%;background-color:var(--confetti-gold);animation-duration:10s;animation-delay:-19.2s} .particle:nth-child(81){width:13px;height:8px;top:-10%;left:97%;background-color:var(--confetti-yellow);animation-duration:20s;animation-delay:-20.2s} .particle:nth-child(82){width:8px;height:5px;top:-10%;left:4%;background-color:var(--confetti-dark-gold);animation-duration:12s;animation-delay:-.8s} .particle:nth-child(83){width:9px;height:6px;top:-10%;left:14%;background-color:var(--confetti-gold);animation-duration:15s;animation-delay:-1.8s} .particle:nth-child(84){width:7px;height:4px;top:-10%;left:24%;background-color:var(--confetti-yellow);animation-duration:7s;animation-delay:-2.8s} .particle:nth-child(85){width:12px;height:8px;top:-10%;left:34%;background-color:var(--confetti-dark-gold);animation-duration:19s;animation-delay:-3.8s} .particle:nth-child(86){width:8px;height:5px;top:-10%;left:44%;background-color:var(--confetti-gold);animation-duration:13s;animation-delay:-4.8s} .particle:nth-child(87){width:9px;height:6px;top:-10%;left:54%;background-color:var(--confetti-yellow);animation-duration:15s;animation-delay:-5.8s} .particle:nth-child(88){width:7px;height:4px;top:-10%;left:64%;background-color:var(--confetti-dark-gold);animation-duration:9s;animation-delay:-6.8s} .particle:nth-child(89){width:11px;height:7px;top:-10%;left:74%;background-color:var(--confetti-gold);animation-duration:18s;animation-delay:-7.8s} .particle:nth-child(90){width:8px;height:5px;top:-10%;left:84%;background-color:var(--confetti-yellow);animation-duration:11s;animation-delay:-8.8s} .particle:nth-child(91){width:7px;height:4px;top:-10%;left:94%;background-color:var(--confetti-dark-gold);animation-duration:12s;animation-delay:-9.8s} .particle:nth-child(92){width:9px;height:6px;top:-10%;left:3%;background-color:var(--confetti-gold);animation-duration:16s;animation-delay:-10.8s} .particle:nth-child(93){width:12px;height:8px;top:-10%;left:13%;background-color:var(--confetti-yellow);animation-duration:22s;animation-delay:-11.8s} .particle:nth-child(94){width:8px;height:5px;top:-10%;left:23%;background-color:var(--confetti-dark-gold);animation-duration:14s;animation-delay:-12.8s} .particle:nth-child(95){width:11px;height:7px;top:-10%;left:33%;background-color:var(--confetti-gold);animation-duration:19s;animation-delay:-13.8s} .particle:nth-child(96){width:7px;height:4px;top:-10%;left:43%;background-color:var(--confetti-yellow);animation-duration:10s;animation-delay:-14.8s} .particle:nth-child(97){width:9px;height:6px;top:-10%;left:53%;background-color:var(--confetti-dark-gold);animation-duration:15s;animation-delay:-15.8s} .particle:nth-child(98){width:8px;height:5px;top:-10%;left:63%;background-color:var(--confetti-gold);animation-duration:12s;animation-delay:-16.8s} .particle:nth-child(99){width:11px;height:7px;top:-10%;left:73%;background-color:var(--confetti-yellow);animation-duration:17s;animation-delay:-17.8s} .particle:nth-child(100){width:7px;height:4px;top:-10%;left:83%;background-color:var(--confetti-dark-gold);animation-duration:11s;animation-delay:-18.8s} .particle:nth-child(101){width:13px;height:8px;top:-10%;left:93%;background-color:var(--confetti-gold);animation-duration:21s;animation-delay:-19.8s} .particle:nth-child(102){width:8px;height:5px;top:-10%;left:2%;background-color:var(--confetti-yellow);animation-duration:13s;animation-delay:-.4s} .particle:nth-child(103){width:9px;height:6px;top:-10%;left:12%;background-color:var(--confetti-dark-gold);animation-duration:16s;animation-delay:-1.4s} .particle:nth-child(104){width:7px;height:4px;top:-10%;left:22%;background-color:var(--confetti-gold);animation-duration:8s;animation-delay:-2.4s} .particle:nth-child(105){width:12px;height:8px;top:-10%;left:32%;background-color:var(--confetti-yellow);animation-duration:20s;animation-delay:-3.4s} .particle:nth-child(106){width:8px;height:5px;top:-10%;left:42%;background-color:var(--confetti-dark-gold);animation-duration:14s;animation-delay:-4.4s} .particle:nth-child(107){width:9px;height:6px;top:-10%;left:52%;background-color:var(--confetti-gold);animation-duration:16s;animation-delay:-5.4s} .particle:nth-child(108){width:7px;height:4px;top:-10%;left:62%;background-color:var(--confetti-yellow);animation-duration:10s;animation-delay:-6.4s} .particle:nth-child(109){width:11px;height:7px;top:-10%;left:72%;background-color:var(--confetti-dark-gold);animation-duration:19s;animation-delay:-7.4s} .particle:nth-child(110){width:8px;height:5px;top:-10%;left:82%;background-color:var(--confetti-gold);animation-duration:12s;animation-delay:-8.4s} .particle:nth-child(111){width:7px;height:4px;top:-10%;left:92%;background-color:var(--confetti-yellow);animation-duration:13s;animation-delay:-9.4s} .particle:nth-child(112){width:9px;height:6px;top:-10%;left:1%;background-color:var(--confetti-dark-gold);animation-duration:17s;animation-delay:-10.4s} .particle:nth-child(113){width:12px;height:8px;top:-10%;left:11%;background-color:var(--confetti-gold);animation-duration:23s;animation-delay:-11.4s} .particle:nth-child(114){width:8px;height:5px;top:-10%;left:21%;background-color:var(--confetti-yellow);animation-duration:15s;animation-delay:-12.4s} .particle:nth-child(115){width:11px;height:7px;top:-10%;left:31%;background-color:var(--confetti-dark-gold);animation-duration:20s;animation-delay:-13.4s} .particle:nth-child(116){width:7px;height:4px;top:-10%;left:41%;background-color:var(--confetti-gold);animation-duration:11s;animation-delay:-14.4s} .particle:nth-child(117){width:9px;height:6px;top:-10%;left:51%;background-color:var(--confetti-yellow);animation-duration:16s;animation-delay:-15.4s} .particle:nth-child(118){width:8px;height:5px;top:-10%;left:61%;background-color:var(--confetti-dark-gold);animation-duration:13s;animation-delay:-16.4s} .particle:nth-child(119){width:11px;height:7px;top:-10%;left:71%;background-color:var(--confetti-gold);animation-duration:18s;animation-delay:-17.4s} .particle:nth-child(120){width:7px;height:4px;top:-10%;left:81%;background-color:var(--confetti-yellow);animation-duration:12s;animation-delay:-18.4s}
-        
+        /* Particle styles... */
+        .particle:nth-child(1){width:10px;height:7px;top:-10%;left:25%;background-color:var(--confetti-gold);animation-duration:12s;animation-delay:-3s} .particle:nth-child(2){width:8px;height:5px;top:-10%;left:55%;background-color:var(--confetti-yellow);animation-duration:8s;animation-delay:-1s} .particle:nth-child(3){width:9px;height:6px;top:-10%;left:80%;background-color:var(--confetti-dark-gold);animation-duration:15s;animation-delay:-5s} .particle:nth-child(4){width:7px;height:4px;top:-10%;left:10%;background-color:var(--confetti-yellow);animation-duration:6s;animation-delay:-.5s} .particle:nth-child(5){width:12px;height:8px;top:-10%;left:90%;background-color:var(--confetti-gold);animation-duration:18s;animation-delay:-7s} .particle:nth-child(6){width:8px;height:5px;top:-10%;left:5%;background-color:var(--confetti-dark-gold);animation-duration:11s;animation-delay:-2s} .particle:nth-child(7){width:9px;height:6px;top:-10%;left:40%;background-color:var(--confetti-gold);animation-duration:13s;animation-delay:-4s} .particle:nth-child(8){width:7px;height:4px;top:-10%;left:70%;background-color:var(--confetti-yellow);animation-duration:7s;animation-delay:-1.5s} .particle:nth-child(9){width:11px;height:7px;top:-10%;left:50%;background-color:var(--confetti-dark-gold);animation-duration:16s;animation-delay:-6s} .particle:nth-child(10){width:8px;height:5px;top:-10%;left:20%;background-color:var(--confetti-gold);animation-duration:9s;animation-delay:-2.5s}
         .content-container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
         .intro-section { text-align: center; max-width: 750px; margin: 0 auto 60px auto; }
         .intro-section h2 { font-family: 'Poppins', sans-serif; font-size: 2.5rem; color: var(--orange); margin-bottom: 16px; }
         .intro-section p { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; }
-        
         .city-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -136,8 +128,6 @@
         }
         .footer { text-align: center; padding: 40px 20px; margin-top: 40px; border-top: 1px solid #2a2a2a; }
         .footer p { color: var(--text-secondary); font-size: 0.9rem; }
-
-        /* REMOVED media query to stop hiding video on mobile */
     </style>
 </head>
 <body>
@@ -147,14 +137,12 @@
             <source src="https://videos.pexels.com/video-files/3209828/3209828-hd_1920_1080_25fps.mp4" type="video/mp4">
         </video>
         <div class="particles">
-            <span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span>
+            <span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span>
         </div>
-        <div class="hero-content">
-            <div class="hero-logo">
-                <img src="https://uploads.onecompiler.io/43jasxyr7/43r2gqsqx/Mealzoforbusiness%20logo%20W.png" alt="Mealzo for Business Logo">
-            </div>
-            <h1>Mealzo for Business Awards 2025</h1>
+        <div class="hero-logo">
+            <img src="https://uploads.onecompiler.io/43jasxyr7/43r2gqsqx/Mealzoforbusiness%20logo%20W.png" alt="Mealzo for Business Logo">
         </div>
+        <h1>Mealzo for Business Awards 2025</h1>
     </header>
 
     <main class="content-container">
@@ -183,6 +171,187 @@
                     <p class="city-card-subtitle">Coming Soon</p>
                 </div>
             </a>
+            
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/2207687/pexels-photo-2207687.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Edinburgh" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Edinburgh</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+            
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/1693634/pexels-photo-1693634.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Glasgow" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Glasgow</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/1879061/pexels-photo-1879061.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Aberdeen" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Aberdeen</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/16142646/pexels-photo-16142646/free-photo-of-roker-pier-and-lighthouse.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Sunderland" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Sunderland</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+            
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/2378976/pexels-photo-2378976.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Highlands" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Highlands</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+            
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/5924903/pexels-photo-5924903.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Fife" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Fife</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+            
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/1598377/pexels-photo-1598377.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Perth and Kinross" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Perth and Kinross</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+            
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/14182404/pexels-photo-14182404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="The Scottish Borders" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">The Scottish Borders</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+            
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/1618269/pexels-photo-1618269.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Falkirk" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Falkirk</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+            
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/5038890/pexels-photo-5038890.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Stirling" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Stirling</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/1109354/pexels-photo-1109354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="South Lanarkshire" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">South Lanarkshire</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/797793/pexels-photo-797793.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Renfrewshire" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Renfrewshire</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+            
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/4678250/pexels-photo-4678250.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Lothian" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Lothian</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/4825701/pexels-photo-4825701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="North Ayrshire" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">North Ayrshire</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/1031644/pexels-photo-1031644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Midlothian" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Midlothian</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/4188296/pexels-photo-4188296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="East Dunbartonshire" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">East Dunbartonshire</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Clackmannanshire" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Clackmannanshire</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/2103933/pexels-photo-2103933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="West Dunbartonshire" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">West Dunbartonshire</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/4219173/pexels-photo-4219173.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Argyll and Bute" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Argyll and Bute</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+            
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/326311/pexels-photo-326311.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Cumberland" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Cumberland</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+
         </div>
     </main>
   
