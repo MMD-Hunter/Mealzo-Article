@@ -1,362 +1,362 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mealzo for Business Awards 2025</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --orange: #fc5203;
-            --background-dark: #191919;
-            --text-light: #FFFFFF;
-            --text-secondary: #a0a0a0;
-            --card-gradient: linear-gradient(180deg, rgba(25, 25, 25, 0) 0%, rgba(25, 25, 25, 0.8) 80%);
-            --radius: 12px;
-            --confetti-gold: #FFD700;
-            --confetti-yellow: #F0E68C;
-            --confetti-dark-gold: #DAA520;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--background-dark);
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-        .hero {
-            position: relative;
-            height: 90vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
-            overflow: hidden;
-            perspective: 800px;
-        }
-        .hero-video-bg {
-            position: absolute; top: 50%; left: 50%;
-            width: 100%; height: 100%; object-fit: cover;
-            transform: translate(-50%, -50%); z-index: -2;
-            filter: brightness(0.7);
-        }
-        .hero-overlay {
-            position: absolute; top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); z-index: -1;
-        }
-        .hero-logo img { max-width: 180px; margin-bottom: 24px; }
-        .hero h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: clamp(2.8rem, 7vw, 5rem);
-            font-weight: 700; letter-spacing: -1px; max-width: 900px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5); 
-            z-index: 2;
-        }
-        .particles {
-            position: absolute; top: 0; left: 0;
-            width: 100%; height: 100%; overflow: hidden;
-            z-index: 1; transform-style: preserve-3d;
-        }
-        .particle { position: absolute; animation: animate-confetti-3d linear infinite; }
-        @keyframes animate-confetti-3d {
-            0% { transform: translateY(-10vh) rotateX(0) rotateY(0); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(100vh) rotateX(540deg) rotateY(1080deg); opacity: 0; }
-        }
-        /* Particle styles... */
-        .particle:nth-child(1){width:10px;height:7px;top:-10%;left:25%;background-color:var(--confetti-gold);animation-duration:12s;animation-delay:-3s} .particle:nth-child(2){width:8px;height:5px;top:-10%;left:55%;background-color:var(--confetti-yellow);animation-duration:8s;animation-delay:-1s} .particle:nth-child(3){width:9px;height:6px;top:-10%;left:80%;background-color:var(--confetti-dark-gold);animation-duration:15s;animation-delay:-5s} .particle:nth-child(4){width:7px;height:4px;top:-10%;left:10%;background-color:var(--confetti-yellow);animation-duration:6s;animation-delay:-.5s} .particle:nth-child(5){width:12px;height:8px;top:-10%;left:90%;background-color:var(--confetti-gold);animation-duration:18s;animation-delay:-7s} .particle:nth-child(6){width:8px;height:5px;top:-10%;left:5%;background-color:var(--confetti-dark-gold);animation-duration:11s;animation-delay:-2s} .particle:nth-child(7){width:9px;height:6px;top:-10%;left:40%;background-color:var(--confetti-gold);animation-duration:13s;animation-delay:-4s} .particle:nth-child(8){width:7px;height:4px;top:-10%;left:70%;background-color:var(--confetti-yellow);animation-duration:7s;animation-delay:-1.5s} .particle:nth-child(9){width:11px;height:7px;top:-10%;left:50%;background-color:var(--confetti-dark-gold);animation-duration:16s;animation-delay:-6s} .particle:nth-child(10){width:8px;height:5px;top:-10%;left:20%;background-color:var(--confetti-gold);animation-duration:9s;animation-delay:-2.5s}
-        .content-container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
-        .intro-section { text-align: center; max-width: 750px; margin: 0 auto 60px auto; }
-        .intro-section h2 { font-family: 'Poppins', sans-serif; font-size: 2.5rem; color: var(--orange); margin-bottom: 16px; }
-        .intro-section p { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; }
-        .city-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 24px;
-        }
-        .city-card {
-            position: relative;
-            border-radius: var(--radius);
-            overflow: hidden;
-            aspect-ratio: 16 / 10;
-            display: flex;
-            align-items: flex-end;
-            justify-content: flex-start;
-            text-decoration: none;
-            color: var(--text-light);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .city-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-        }
-        .city-card-bg {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            object-fit: cover;
-            z-index: -2;
-            transition: transform 0.4s ease;
-        }
-        .city-card:hover .city-card-bg {
-            transform: scale(1.05);
-        }
-        .city-card-overlay {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
-            z-index: -1;
-        }
-        .city-card-content {
-            padding: 24px;
-        }
-        .city-card-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-        }
-        .city-card-subtitle {
-            font-size: 1rem;
-            color: var(--text-secondary);
-        }
-        .footer { text-align: center; padding: 40px 20px; margin-top: 40px; border-top: 1px solid #2a2a2a; }
-        .footer p { color: var(--text-secondary); font-size: 0.9rem; }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mealzo for Business Awards 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --orange: #fc5203;
+            --background-dark: #191919;
+            --text-light: #FFFFFF;
+            --text-secondary: #a0a0a0;
+            --card-gradient: linear-gradient(180deg, rgba(25, 25, 25, 0) 0%, rgba(25, 25, 25, 0.8) 80%);
+            --radius: 12px;
+            --confetti-gold: #FFD700;
+            --confetti-yellow: #F0E68C;
+            --confetti-dark-gold: #DAA520;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        .hero {
+            position: relative;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            overflow: hidden;
+            perspective: 800px;
+        }
+        .hero-video-bg {
+            position: absolute; top: 50%; left: 50%;
+            width: 100%; height: 100%; object-fit: cover;
+            transform: translate(-50%, -50%); z-index: -2;
+            filter: brightness(0.7);
+        }
+        .hero-overlay {
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); z-index: -1;
+        }
+        .hero-logo img { max-width: 180px; margin-bottom: 24px; }
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2.8rem, 7vw, 5rem);
+            font-weight: 700; letter-spacing: -1px; max-width: 900px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5); 
+            z-index: 2;
+        }
+        .particles {
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%; overflow: hidden;
+            z-index: 1; transform-style: preserve-3d;
+        }
+        .particle { position: absolute; animation: animate-confetti-3d linear infinite; }
+        @keyframes animate-confetti-3d {
+            0% { transform: translateY(-10vh) rotateX(0) rotateY(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(100vh) rotateX(540deg) rotateY(1080deg); opacity: 0; }
+        }
+        /* Particle styles... */
+        .particle:nth-child(1){width:10px;height:7px;top:-10%;left:25%;background-color:var(--confetti-gold);animation-duration:12s;animation-delay:-3s} .particle:nth-child(2){width:8px;height:5px;top:-10%;left:55%;background-color:var(--confetti-yellow);animation-duration:8s;animation-delay:-1s} .particle:nth-child(3){width:9px;height:6px;top:-10%;left:80%;background-color:var(--confetti-dark-gold);animation-duration:15s;animation-delay:-5s} .particle:nth-child(4){width:7px;height:4px;top:-10%;left:10%;background-color:var(--confetti-yellow);animation-duration:6s;animation-delay:-.5s} .particle:nth-child(5){width:12px;height:8px;top:-10%;left:90%;background-color:var(--confetti-gold);animation-duration:18s;animation-delay:-7s} .particle:nth-child(6){width:8px;height:5px;top:-10%;left:5%;background-color:var(--confetti-dark-gold);animation-duration:11s;animation-delay:-2s} .particle:nth-child(7){width:9px;height:6px;top:-10%;left:40%;background-color:var(--confetti-gold);animation-duration:13s;animation-delay:-4s} .particle:nth-child(8){width:7px;height:4px;top:-10%;left:70%;background-color:var(--confetti-yellow);animation-duration:7s;animation-delay:-1.5s} .particle:nth-child(9){width:11px;height:7px;top:-10%;left:50%;background-color:var(--confetti-dark-gold);animation-duration:16s;animation-delay:-6s} .particle:nth-child(10){width:8px;height:5px;top:-10%;left:20%;background-color:var(--confetti-gold);animation-duration:9s;animation-delay:-2.5s}
+        .content-container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        .intro-section { text-align: center; max-width: 750px; margin: 0 auto 60px auto; }
+        .intro-section h2 { font-family: 'Poppins', sans-serif; font-size: 2.5rem; color: var(--orange); margin-bottom: 16px; }
+        .intro-section p { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; }
+        .city-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 24px;
+        }
+        .city-card {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            aspect-ratio: 16 / 10;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            text-decoration: none;
+            color: var(--text-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .city-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+        .city-card-bg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: -2;
+            transition: transform 0.4s ease;
+        }
+        .city-card:hover .city-card-bg {
+            transform: scale(1.05);
+        }
+        .city-card-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+            z-index: -1;
+        }
+        .city-card-content {
+            padding: 24px;
+        }
+        .city-card-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .city-card-subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+        .footer { text-align: center; padding: 40px 20px; margin-top: 40px; border-top: 1px solid #2a2a2a; }
+        .footer p { color: var(--text-secondary); font-size: 0.9rem; }
+    </style>
 </head>
 <body>
-    <header class="hero">
-        <div class="hero-overlay"></div>
-        <video class="hero-video-bg" poster="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg" autoplay loop muted playsinline>
-            <source src="https://videos.pexels.com/video-files/3209828/3209828-hd_1920_1080_25fps.mp4" type="video/mp4">
-        </video>
-        <div class="particles">
-            <span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span>
-        </div>
-        <div class="hero-logo">
-            <img src="https://uploads.onecompiler.io/43jasxyr7/43rn3pumy/MFB-8.png" alt="Mealzo for Business Logo">
-        </div>
-        <h1>Mealzo for Business Awards 2025</h1>
-    </header>
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <video class="hero-video-bg" poster="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg" autoplay loop muted playsinline>
+            <source src="https://videos.pexels.com/video-files/3209828/3209828-hd_1920_1080_25fps.mp4" type="video/mp4">
+        </video>
+        <div class="particles">
+            <span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span>
+        </div>
+        <div class="hero-logo">
+            <img src="https://uploads.onecompiler.io/43jasxyr7/43rn3pumy/MFB-8.png" alt="Mealzo for Business Logo">
+        </div>
+        <h1>Mealzo for Business Awards 2025</h1>
+    </header>
 
-    <main class="content-container">
-        <section class="intro-section">
-            <h2>Find Your Local Winners</h2>
-            <p>
-                We're celebrating the best independent restaurants and takeaways across the nation. Select your city below to see the culinary champions who made the cut in your area.
-            </p>
-        </section>
+    <main class="content-container">
+        <section class="intro-section">
+            <h2>Find Your Local Winners</h2>
+            <p>
+                We're celebrating the best independent restaurants and takeaways across the nation. Select your city below to see the culinary champions who made the cut in your area.
+            </p>
+        </section>
 
-        <div class="city-grid">
-            <a href="newcastle.html" class="city-card">
-                <img src="https://uploads.onecompiler.io/43jasxyr7/43s245fry/ChatGPT%20Image%20Jul%2022,%202025,%2004_20_57%20PM.png" alt="Newcastle upon Tyne" class="city-card-bg">
-                <div class="city-card-overlay"></div>
-                <div class="city-card-content">
-                    <h3 class="city-card-title">Newcastle</h3>
-                    <p class="city-card-subtitle">View Winners</p>
-                </div>
-            </a>
+        <div class="city-grid">
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/1879061/pexels-photo-1879061.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Aberdeen" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Aberdeen</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
 
-            <a href="#" class="city-card">
-                <img src="https://images.pexels.com/photos/1653877/pexels-photo-1653877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Birmingham" class="city-card-bg">
-                <div class="city-card-overlay"></div>
-                <div class="city-card-content">
-                    <h3 class="city-card-title">Birmingham</h3>
-                    <p class="city-card-subtitle">Coming Soon</p>
-                </div>
-            </a>
-            
-            <a href="#" class="city-card">
-                <img src="https://images.pexels.com/photos/2207687/pexels-photo-2207687.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Edinburgh" class="city-card-bg">
-                <div class="city-card-overlay"></div>
-                <div class="city-card-content">
-                    <h3 class="city-card-title">Edinburgh</h3>
-                    <p class="city-card-subtitle">Coming Soon</p>
-                </div>
-            </a>
-            
-            <a href="#" class="city-card">
-                <img src="https://images.pexels.com/photos/1693634/pexels-photo-1693634.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Glasgow" class="city-card-bg">
-                <div class="city-card-overlay"></div>
-                <div class="city-card-content">
-                    <h3 class="city-card-title">Glasgow</h3>
-                    <p class="city-card-subtitle">Coming Soon</p>
-                </div>
-            </a>
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/4219173/pexels-photo-4219173.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Argyll and Bute" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Argyll and Bute</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
 
-            <a href="#" class="city-card">
-                <img src="https://images.pexels.com/photos/1879061/pexels-photo-1879061.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Aberdeen" class="city-card-bg">
-                <div class="city-card-overlay"></div>
-                <div class="city-card-content">
-                    <h3 class="city-card-title">Aberdeen</h3>
-                    <p class="city-card-subtitle">Coming Soon</p>
-                </div>
-            </a>
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/1653877/pexels-photo-1653877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Birmingham" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Birmingham</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
 
-            <a href="#" class="city-card">
-                <img src="https://images.pexels.com/photos/16142646/pexels-photo-16142646/free-photo-of-roker-pier-and-lighthouse.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Sunderland" class="city-card-bg">
-                <div class="city-card-overlay"></div>
-                <div class="city-card-content">
-                    <h3 class="city-card-title">Sunderland</h3>
-                    <p class="city-card-subtitle">Coming Soon</p>
-                </div>
-            </a>
-            
-            <a href="#" class="city-card">
-                <img src="https://images.pexels.com/photos/2378976/pexels-photo-2378976.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Highlands" class="city-card-bg">
-                <div class="city-card-overlay"></div>
-                <div class="city-card-content">
-                    <h3 class="city-card-title">Highlands</h3>
-                    <p class="city-card-subtitle">Coming Soon</p>
-                </div>
-            </a>
-            
-            <a href="#" class="city-card">
-                <img src="https://images.pexels.com/photos/5924903/pexels-photo-5924903.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Fife" class="city-card-bg">
-                <div class="city-card-overlay"></div>
-                <div class="city-card-content">
-                    <h3 class="city-card-title">Fife</h3>
-                    <p class="city-card-subtitle">Coming Soon</p>
-                </div>
-            </a>
-            
-            <a href="#" class="city-card">
-                <img src="https://images.pexels.com/photos/1598377/pexels-photo-1598377.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Perth and Kinross" class="city-card-bg">
-                <div class="city-card-overlay"></div>
-                <div class="city-card-content">
-                    <h3 class="city-card-title">Perth and Kinross</h3>
-                    <p class="city-card-subtitle">Coming Soon</p>
-                </div>
-            </a>
-            
-            <a href="#" class="city-card">
-                <img src="https://images.pexels.com/photos/14182404/pexels-photo-14182404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="The Scottish Borders" class="city-card-bg">
-                <div class="city-card-overlay"></div>
-                <div class="city-card-content">
-                    <h3 class="city-card-title">The Scottish Borders</h3>
-                    <p class="city-card-subtitle">Coming Soon</p>
-                </div>
-            </a>
-            
-            <a href="#" class="city-card">
-                <img src="https://images.pexels.com/photos/1618269/pexels-photo-1618269.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Falkirk" class="city-card-bg">
-                <div class="city-card-overlay"></div>
-                <div class="city-card-content">
-                    <h3 class="city-card-title">Falkirk</h3>
-                    <p class="city-card-subtitle">Coming Soon</p>
-                </div>
-            </a>
-            
-            <a href="#" class="city-card">
-                <img src="https://images.pexels.com/photos/5038890/pexels-photo-5038890.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Stirling" class="city-card-bg">
-                <div class="city-card-overlay"></div>
-                <div class="city-card-content">
-                    <h3 class="city-card-title">Stirling</h3>
-                    <p class="city-card-subtitle">Coming Soon</p>
-                </div>
-            </a>
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Clackmannanshire" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Clackmannanshire</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
 
-            <a href="#" class="city-card">
-                <img src="https://images.pexels.com/photos/1109354/pexels-photo-1109354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="South Lanarkshire" class="city-card-bg">
-                <div class="city-card-overlay"></div>
-                <div class="city-card-content">
-                    <h3 class="city-card-title">South Lanarkshire</h3>
-                    <p class="city-card-subtitle">Coming Soon</p>
-                </div>
-            </a>
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/326311/pexels-photo-326311.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Cumberland" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Cumberland</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
 
-            <a href="#" class="city-card">
-                <img src="https://images.pexels.com/photos/797793/pexels-photo-797793.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Renfrewshire" class="city-card-bg">
-                <div class="city-card-overlay"></div>
-                <div class="city-card-content">
-                    <h3 class="city-card-title">Renfrewshire</h3>
-                    <p class="city-card-subtitle">Coming Soon</p>
-                </div>
-            </a>
-            
-            <a href="#" class="city-card">
-                <img src="https://images.pexels.com/photos/4678250/pexels-photo-4678250.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Lothian" class="city-card-bg">
-                <div class="city-card-overlay"></div>
-                <div class="city-card-content">
-                    <h3 class="city-card-title">Lothian</h3>
-                    <p class="city-card-subtitle">Coming Soon</p>
-                </div>
-            </a>
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/4188296/pexels-photo-4188296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="East Dunbartonshire" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">East Dunbartonshire</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
 
-            <a href="#" class="city-card">
-                <img src="https://images.pexels.com/photos/4825701/pexels-photo-4825701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="North Ayrshire" class="city-card-bg">
-                <div class="city-card-overlay"></div>
-                <div class="city-card-content">
-                    <h3 class="city-card-title">North Ayrshire</h3>
-                    <p class="city-card-subtitle">Coming Soon</p>
-                </div>
-            </a>
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/2207687/pexels-photo-2207687.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Edinburgh" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Edinburgh</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
 
-            <a href="#" class="city-card">
-                <img src="https://images.pexels.com/photos/1031644/pexels-photo-1031644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Midlothian" class="city-card-bg">
-                <div class="city-card-overlay"></div>
-                <div class="city-card-content">
-                    <h3 class="city-card-title">Midlothian</h3>
-                    <p class="city-card-subtitle">Coming Soon</p>
-                </div>
-            </a>
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/1618269/pexels-photo-1618269.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Falkirk" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Falkirk</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
 
-            <a href="#" class="city-card">
-                <img src="https://images.pexels.com/photos/4188296/pexels-photo-4188296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="East Dunbartonshire" class="city-card-bg">
-                <div class="city-card-overlay"></div>
-                <div class="city-card-content">
-                    <h3 class="city-card-title">East Dunbartonshire</h3>
-                    <p class="city-card-subtitle">Coming Soon</p>
-                </div>
-            </a>
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/5924903/pexels-photo-5924903.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Fife" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Fife</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
 
-            <a href="#" class="city-card">
-                <img src="https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Clackmannanshire" class="city-card-bg">
-                <div class="city-card-overlay"></div>
-                <div class="city-card-content">
-                    <h3 class="city-card-title">Clackmannanshire</h3>
-                    <p class="city-card-subtitle">Coming Soon</p>
-                </div>
-            </a>
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/1693634/pexels-photo-1693634.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Glasgow" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Glasgow</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
 
-            <a href="#" class="city-card">
-                <img src="https://images.pexels.com/photos/2103933/pexels-photo-2103933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="West Dunbartonshire" class="city-card-bg">
-                <div class="city-card-overlay"></div>
-                <div class="city-card-content">
-                    <h3 class="city-card-title">West Dunbartonshire</h3>
-                    <p class="city-card-subtitle">Coming Soon</p>
-                </div>
-            </a>
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/2378976/pexels-photo-2378976.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Highlands" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Highlands</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
 
-            <a href="#" class="city-card">
-                <img src="https://images.pexels.com/photos/4219173/pexels-photo-4219173.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Argyll and Bute" class="city-card-bg">
-                <div class="city-card-overlay"></div>
-                <div class="city-card-content">
-                    <h3 class="city-card-title">Argyll and Bute</h3>
-                    <p class="city-card-subtitle">Coming Soon</p>
-                </div>
-            </a>
-            
-            <a href="#" class="city-card">
-                <img src="https://images.pexels.com/photos/326311/pexels-photo-326311.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Cumberland" class="city-card-bg">
-                <div class="city-card-overlay"></div>
-                <div class="city-card-content">
-                    <h3 class="city-card-title">Cumberland</h3>
-                    <p class="city-card-subtitle">Coming Soon</p>
-                </div>
-            </a>
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/4678250/pexels-photo-4678250.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Lothian" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Lothian</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
 
-        </div>
-    </main>
-  
-    <footer class="footer">
-        <p>© 2025 Mealzo for Business Awards. All rights reserved.</p>
-    </footer>
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/1031644/pexels-photo-1031644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Midlothian" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Midlothian</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+
+            <a href="newcastle.html" class="city-card">
+                <img src="https://uploads.onecompiler.io/43jasxyr7/43s245fry/ChatGPTImageJul22202504_20_57PM.png" alt="Newcastle upon Tyne" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Newcastle</h3>
+                    <p class="city-card-subtitle">View Winners</p>
+                </div>
+            </a>
+
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/4825701/pexels-photo-4825701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="North Ayrshire" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">North Ayrshire</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/1598377/pexels-photo-1598377.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Perth and Kinross" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Perth and Kinross</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/797793/pexels-photo-797793.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Renfrewshire" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Renfrewshire</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/1109354/pexels-photo-1109354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="South Lanarkshire" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">South Lanarkshire</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/5038890/pexels-photo-5038890.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Stirling" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Stirling</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/16142646/pexels-photo-16142646/free-photo-of-roker-pier-and-lighthouse.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Sunderland" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">Sunderland</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/14182404/pexels-photo-14182404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="The Scottish Borders" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">The Scottish Borders</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+
+            <a href="#" class="city-card">
+                <img src="https://images.pexels.com/photos/2103933/pexels-photo-2103933.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="West Dunbartonshire" class="city-card-bg">
+                <div class="city-card-overlay"></div>
+                <div class="city-card-content">
+                    <h3 class="city-card-title">West Dunbartonshire</h3>
+                    <p class="city-card-subtitle">Coming Soon</p>
+                </div>
+            </a>
+
+        </div>
+    </main>
+  
+    <footer class="footer">
+        <p>© 2025 Mealzo for Business Awards. All rights reserved.</p>
+    </footer>
 </body>
 </html>
