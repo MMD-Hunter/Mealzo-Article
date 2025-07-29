@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winner: TKH Fish Bar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --teal: #fc5203;
+            --background-dark: #191919;
+            --card-background: #222;
+            --text-light: #FFFFFF;
+            --text-secondary: #a0a0a0;
+            --confetti-gold: #FFD700;
+            --radius: 12px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .winner-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 8px;
+        }
+        .location {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+        .description p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5em;
+        }
+        .award-quote {
+            background-color: #333;
+            border-left: 4px solid var(--confetti-gold);
+            padding: 20px 25px;
+            margin: 30px 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            border-radius: 0 8px 8px 0;
+        }
+        .top-seller {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--teal);
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            color: var(--teal);
+            text-decoration: none;
+            font-weight: 700;
+            padding: 10px 20px;
+            border: 2px solid var(--teal);
+            border-radius: 50px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .back-link:hover {
+            background-color: var(--teal);
+            color: var(--background-dark);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="lothian-winners.html" class="back-link">← Back to Lothian Winners</a>
+        <header style="margin-top: 40px;">
+            <h1>TKH Fish Bar – Customer Favourite</h1>
+            <p class="location">East Lothian</p>
+        </header>
+        <img src="https://images.pexels.com/photos/1029437/pexels-photo-1029437.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="TKH Fish Bar's award-winning fish supper" class="winner-image">
+        <main class="description">
+            <p>
+                Known for its crisp batter, golden chips and generous portions, TKH Fish Bar has officially won the Customer Favourite award in East Lothian. The title reflects the overwhelming support from regulars who keep coming back for one reason – consistently great food.
+            </p>
+            <p>
+                Owner Sabir Eroglu puts customer experience at the heart of everything. From the moment an order is placed to the final bite, the team focuses on freshness, quality and speed.
+            </p>
+            <p>
+                TKH’s signature dish, the classic fish supper, remains their most popular. But the menu also includes kebabs, burgers and pizzas that cater to every craving.
+            </p>
+            <div class="award-quote">
+                “We’re grateful for this recognition and we want to thank Mealzo and every customer who’s taken the time to leave a review or place an order. It keeps us going.”
+            </div>
+            <p>
+                TKH Fish Bar has seen steady growth through its partnership with Mealzo, gaining visibility across East Lothian and earning praise for both flavour and service.
+            </p>
+            <p class="top-seller">Top seller: Classic fish supper</p>
+        </main>
+    </div>
+</body>
+</html>
