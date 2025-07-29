@@ -57,8 +57,8 @@
     .intro-section { text-align: center; max-width: 750px; margin: 0 auto 60px auto; }
     .intro-section h2 { font-family: 'Poppins', sans-serif; font-size: 2rem; color: var(--orange); margin-bottom: 16px; }
     .intro-section p { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; }
-    .awards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-    .award-card { position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 3 / 4; cursor: pointer; }
+    .awards-grid { display: grid; grid-template-columns: 1fr; gap: 24px; justify-content: center; }
+    .award-card { position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 3 / 4; cursor: pointer; max-width: 350px; margin: 0 auto; }
     .award-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
     .award-card-content { position: absolute; bottom: 0; left: 0; width: 100%; padding: 24px 20px; background: var(--card-gradient); z-index: 2; }
     .award-card-title { font-size: 1.25rem; font-weight: 700; color: var(--text-light); margin-bottom: 4px; }
@@ -92,22 +92,12 @@
     <section class="intro-section">
       <h2>Celebrating Local Excellence</h2>
       <p>
-        The celebration of local food excellence continues in West Lothian, where a pair of outstanding local businesses have been honoured at this year's Mealzo for Business Awards.
+        The celebration of local food excellence continues in West Lothian, where one standout takeaway has been honoured at this year's Mealzo for Business Awards for its incredible desserts and commitment to quality.
         <br><br>
-        These award-winning businesses represent the heart of local food culture, proving that great taste is never far away in the Lothians. Here is a closer look at the shops making a name for themselves this year:
+        This award-winning business represents the heart of local food culture, proving that great taste is never far away in the Lothians. Here is a closer look at the shop making a name for itself this year:
       </p>
     </section>
     <div class="awards-grid">
-      <div class="award-card">
-        <img src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Bathgate Bitez award-winning burger">
-        <div class="award-card-content">
-          <div class="award-card-title">Bathgate Bitez</div>
-          <div class="award-card-category">Best Newcomer, West Lothian</div>
-        </div>
-        <div class="award-card-hover-overlay">
-          <a href="bathgate-bitez.html" class="hover-button">View Winner</a>
-        </div>
-      </div>
       <div class="award-card">
         <img src="https://images.pexels.com/photos/6774478/pexels-photo-6774478.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Candy Cream award-winning dessert">
         <div class="award-card-content">
