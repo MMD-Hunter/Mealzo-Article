@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winner: Joe's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --teal: #fc5203;
+            --background-dark: #191919;
+            --card-background: #222;
+            --text-light: #FFFFFF;
+            --text-secondary: #a0a0a0;
+            --confetti-gold: #FFD700;
+            --radius: 12px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .winner-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 8px;
+        }
+        .location {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 25px;
+        }
+        .description p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5em;
+        }
+        .award-quote {
+            background-color: #333;
+            border-left: 4px solid var(--confetti-gold);
+            padding: 20px 25px;
+            margin: 30px 0;
+            font-style: italic;
+            font-size: 1.2rem;
+            border-radius: 0 8px 8px 0;
+        }
+        .top-seller {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--teal);
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            color: var(--teal);
+            text-decoration: none;
+            font-weight: 700;
+            padding: 10px 20px;
+            border: 2px solid var(--teal);
+            border-radius: 50px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .back-link:hover {
+            background-color: var(--teal);
+            color: var(--background-dark);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="lothian-winners.html" class="back-link">← Back to Lothian Winners</a>
+        <header style="margin-top: 40px;">
+            <h1>Joe’s – Hidden Gem Award</h1>
+            <p class="location">East Lothian</p>
+        </header>
+        <img src="https://images.pexels.com/photos/827516/pexels-photo-827516.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Joe's award-winning pizza" class="winner-image">
+        <main class="description">
+            <p>
+                Joe’s, a family-run takeaway nestled in East Lothian, has taken home the Hidden Gem Award at this year’s Mealzo for Business Awards. It is a fitting recognition for a shop that has steadily built a reputation through word of mouth and local support.
+            </p>
+            <p>
+                Led by Dario Andrucci, Joe’s has always focused on quality ingredients, traditional recipes and genuine service. Though it may not sit on a high street or shout loudly online, its loyal following and glowing reviews show that good food speaks for itself.
+            </p>
+            <p>
+                Customer favourites include freshly fried fish, handmade pizzas and kebabs. Each order reflects the passion that goes into running a proper local business.
+            </p>
+            <div class="award-quote">
+                “It’s an honour to be called a hidden gem. We’re thankful to Mealzo and especially to our customers who continue to support us. This award is for them.”
+            </div>
+            <p>
+                With the help of Mealzo, Joe’s has quietly grown into a local favourite beyond its immediate area, connecting with new customers while keeping its charm intact.
+            </p>
+            <p class="top-seller">Top seller: Handmade pizzas</p>
+        </main>
+    </div>
+</body>
+</html>
