@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>East Lothian Winners | Mealzo Awards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --orange: #fc5203;
+            --background-dark: #191919;
+            --text-light: #FFFFFF;
+            --text-secondary: #a0a0a0;
+            --confetti-gold: #FFD700;
+            --confetti-yellow: #F0E68C;
+            --confetti-dark-gold: #DAA520;
+            --card-gradient: linear-gradient(180deg, rgba(25, 25, 25, 0) 0%, rgba(25, 25, 25, 0.8) 80%);
+            --radius: 12px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        .back-to-home {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: 700;
+            z-index: 10;
+        }
+        .hero {
+            position: relative;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            overflow: hidden;
+            perspective: 800px;
+        }
+        .hero-video-bg { position: absolute; top: 50%; left: 50%; width: 100%; height: 100%; object-fit: cover; transform: translate(-50%, -50%); z-index: -2; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); z-index: -1; }
+        .hero-logo img { max-width: 180px; margin-bottom: 24px; }
+        .hero h1 { font-family: 'Poppins', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700; letter-spacing: -1px; max-width: 800px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); z-index: 2; }
+        .particles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 1; transform-style: preserve-3d; }
+        .particle { position: absolute; animation: animate-confetti-3d linear infinite; }
+        @keyframes animate-confetti-3d { 0% { transform: translateY(-10vh) rotateX(0) rotateY(0); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(100vh) rotateX(540deg) rotateY(1080deg); opacity: 0; } }
+        /* Particle styles... */
+        .particle:nth-child(1){width:10px;height:7px;top:-10%;left:25%;background-color:var(--confetti-gold);animation-duration:12s;animation-delay:-3s} .particle:nth-child(2){width:8px;height:5px;top:-10%;left:55%;background-color:var(--confetti-yellow);animation-duration:8s;animation-delay:-1s} .particle:nth-child(3){width:9px;height:6px;top:-10%;left:80%;background-color:var(--confetti-dark-gold);animation-duration:15s;animation-delay:-5s} .particle:nth-child(4){width:7px;height:4px;top:-10%;left:10%;background-color:var(--confetti-yellow);animation-duration:6s;animation-delay:-.5s} .particle:nth-child(5){width:12px;height:8px;top:-10%;left:90%;background-color:var(--confetti-gold);animation-duration:18s;animation-delay:-7s} .particle:nth-child(6){width:8px;height:5px;top:-10%;left:5%;background-color:var(--confetti-dark-gold);animation-duration:11s;animation-delay:-2s} .particle:nth-child(7){width:9px;height:6px;top:-10%;left:40%;background-color:var(--confetti-gold);animation-duration:13s;animation-delay:-4s} .particle:nth-child(8){width:7px;height:4px;top:-10%;left:70%;background-color:var(--confetti-yellow);animation-duration:7s;animation-delay:-1.5s} .particle:nth-child(9){width:11px;height:7px;top:-10%;left:50%;background-color:var(--confetti-dark-gold);animation-duration:16s;animation-delay:-6s} .particle:nth-child(10){width:8px;height:5px;top:-10%;left:20%;background-color:var(--confetti-gold);animation-duration:9s;animation-delay:-2.5s}
+        .content-container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        .intro-section { text-align: center; max-width: 750px; margin: 0 auto 60px auto; }
+        .intro-section h2 { font-family: 'Poppins', sans-serif; font-size: 2rem; color: var(--orange); margin-bottom: 16px; }
+        .intro-section p { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7; }
+        .awards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .award-card { position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 3 / 4; cursor: pointer; }
+        .award-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+        .award-card-content { position: absolute; bottom: 0; left: 0; width: 100%; padding: 24px 20px; background: var(--card-gradient); z-index: 2; }
+        .award-card-title { font-size: 1.25rem; font-weight: 700; color: var(--text-light); margin-bottom: 4px; }
+        .award-card-category { font-size: 1rem; color: var(--text-secondary); }
+        .award-card-hover-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(252, 82, 3, 0.9); display: flex; flex-direction: column; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.4s ease; z-index: 3; }
+        .award-card:hover .award-card-hover-overlay { opacity: 1; }
+        .award-card:hover img { transform: scale(1.05); }
+        .hover-button { padding: 12px 24px; border: 2px solid var(--text-light); border-radius: 50px; color: var(--text-light); background-color: transparent; font-weight: 700; text-decoration: none; transition: background-color 0.3s, color 0.3s; }
+        .hover-button:hover { background-color: var(--text-light); color: var(--orange); }
+        .winner-details-container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        .winner-details-card { background-color: #222; border-radius: var(--radius); padding: 30px 40px; margin-bottom: 30px; border-top: 4px solid var(--orange); }
+        .winner-details-card h2 { font-family: 'Poppins', sans-serif; font-size: 2rem; margin-bottom: 8px; }
+        .winner-details-card .location { color: var(--text-secondary); font-weight: 500; margin-bottom: 20px; }
+        .award-quote { background-color: #333; border-left: 4px solid var(--confetti-gold); padding: 15px 20px; margin: 20px 0; font-style: italic; border-radius: 0 8px 8px 0; }
+        .footer { text-align: center; padding: 40px 20px; margin-top: 40px; border-top: 1px solid #2a2a2a; }
+        .footer p { color: var(--text-secondary); font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-to-home">← Back to Home</a>
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <video class="hero-video-bg" poster="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg" autoplay loop muted playsinline>
+            <source src="https://videos.pexels.com/video-files/3209828/3209828-hd_1920_1080_25fps.mp4" type="video/mp4">
+        </video>
+        <div class="particles">
+            <span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span><span class="particle"></span>
+        </div>
+        <div class="hero-logo">
+            <img src="https://uploads.onecompiler.io/43jasxyr7/43r2gqsqx/Mealzoforbusiness%20logo%20W.png" alt="Mealzo for Business Logo">
+        </div>
+        <h1>East Lothian Winners</h1>
+    </header>
+    <main class="content-container">
+        <section class="intro-section">
+            <h2>Lothian Takeaways Honoured</h2>
+            <p>
+                Outstanding local takeaways across West and East Lothian have been celebrated at this year’s Mealzo for Business Awards, taking home honours in categories that reflect their popularity, service and quality. Chosen based on glowing customer reviews, food excellence and their growth through the Mealzo platform, these award-winning businesses represent the heart of local food culture.
+            </p>
+        </section>
+        <div class="awards-grid">
+            <div class="award-card">
+                <img src="https://www.fifetoday.co.uk/images-e.jpimedia.uk/imagefetch/https://www.scotsman.com/webimage/Prestige.Item.1.77259020!image/image.jpg?width=1200&enable=upscale" alt="Bene’s Takeaway" style="object-position: center 20%;">
+                <div class="award-card-content">
+                    <div class="award-card-title">Bene’s</div>
+                    <div class="award-card-category">Best Takeaway, East Lothian</div>
+                </div>
+                <div class="award-card-hover-overlay">
+                    <a href="#benes-details" class="hover-button">View Winner</a>
+                </div>
+            </div>
+            <div class="award-card">
+                <img src="https://i.ebayimg.com/00/s/NzY4WDEwMjQ=/z/aCIAAOSwyZ5Uo4--/$_86.JPG" alt="Joe's Takeaway">
+                <div class="award-card-content">
+                    <div class="award-card-title">Joe’s</div>
+                    <div class="award-card-category">Hidden Gem Award, East Lothian</div>
+                </div>
+                <div class="award-card-hover-overlay">
+                    <a href="#joes-details" class="hover-button">View Winner</a>
+                </div>
+            </div>
+            <div class="award-card">
+                <img src="https://unafish.co.uk/wp-content/uploads/2023/10/IMG_3514-scaled.jpg" alt="TKH Fish Bar">
+                <div class="award-card-content">
+                    <div class="award-card-title">TKH Fish Bar</div>
+                    <div class="award-card-category">Customer Favourite, East Lothian</div>
+                </div>
+                <div class="award-card-hover-overlay">
+                    <a href="#tkh-details" class="hover-button">View Winner</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="winner-details-container">
+        <section id="benes-details" class="winner-details-card">
+            <h2>Bene’s – Best Takeaway</h2>
+            <p class="location">East Lothian</p>
+            <p>In East Lothian, one name continues to stand out on the takeaway scene. Bene’s has officially taken home the title of Best Takeaway, a recognition earned through consistently positive customer feedback and a dedication to food done right. Owned by Hussain Omer, Bene’s is a local institution that offers a bit of everything, but with care and attention that sets them apart.</p>
+            <div class="award-quote">
+                “Thanks to Mealzo for helping us grow our customer base and be seen by more people. We really appreciate the support and are proud of this achievement.”
+            </div>
+            <p><b>Top sellers:</b> Fish & Chips, Burgers, and Pizzas</p>
+        </section>
+        <section id="joes-details" class="winner-details-card">
+            <h2>Joe’s – Hidden Gem Award</h2>
+            <p class="location">East Lothian</p>
+            <p>Joe’s, a family-run takeaway nestled in East Lothian, has taken home the Hidden Gem Award. Led by Dario Andrucci, Joe’s has always focused on quality ingredients, traditional recipes and genuine service. Though it may not sit on a high street, its loyal following and glowing reviews show that good food speaks for itself.</p>
+            <div class="award-quote">
+                “It’s an honour to be called a hidden gem. We’re thankful to Mealzo and especially to our customers who continue to support us. This award is for them.”
+            </div>
+            <p><b>Top sellers:</b> Freshly Fried Fish, Handmade Pizzas</p>
+        </section>
+        <section id="tkh-details" class="winner-details-card">
+            <h2>TKH Fish Bar – Customer Favourite</h2>
+            <p class="location">East Lothian</p>
+            <p>Known for its crisp batter, golden chips and generous portions, TKH Fish Bar has officially won the Customer Favourite award in East Lothian. Owner Sabir Eroglu puts customer experience at the heart of everything. From the moment an order is placed to the final bite, the team focuses on freshness, quality and speed.</p>
+            <div class="award-quote">
+                “We’re grateful for this recognition and we want to thank Mealzo and every customer who’s taken the time to leave a review or place an order. It keeps us going.”
+            </div>
+            <p><b>Top seller:</b> The Classic Fish Supper</p>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 Mealzo for Business Awards. All rights reserved.</p>
+    </footer>
+</body>
+</html>
